@@ -10,8 +10,8 @@ import {
 
 const Footer = () => (
   <div>
-    <div className="flex">
-      <div className="p-5 flex-1">
+    <div className="flex justify-between pt-20">
+      <div className="w-1/4 pr-5">
         <img src="/text-logo.png" alt="" />
         <p className="mt-5">
           There are many variations of passages of Lorem the Ipsum available but
@@ -45,7 +45,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 flex-1">
+      <div className="p-5 w-1/4">
         <ul>
           <li className="font-bold mb-3">Education</li>
 
@@ -75,7 +75,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 flex-1">
+      <div className="p-5 w-1/4">
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Quick Links</li>
 
@@ -105,7 +105,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 flex-1">
+      <div className="p-5 w-1/4">
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Our Support Download</li>
 
@@ -134,7 +134,7 @@ const Footer = () => (
     </div>
 
     <div className="mt-10 text-center text-[#000B33] text-sm"> 
-        <hr />
+        <hr className="opacity-10" />
         <p className="py-10">© 2021 King’s Chart All Rights Reserved.</p>
     </div>
   </div>
