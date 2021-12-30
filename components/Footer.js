@@ -11,8 +11,8 @@ import {
 const Footer = () => (
   <div>
     <div className="flex justify-between pt-20 flex-col lg:flex-row">
-      <div className="lg:w-1/4 pr-5">
-        <img src="/text-logo.png" alt="" />
+      <div className="lg:w-1/4 Lg:pr-5">
+        <h6 className="text-lg italic">KING'S<span className="font-bold">CHART</span></h6>
         <p className="mt-5">
           There are many variations of passages of Lorem the Ipsum available but
           it is the majority of suffered that a alteration in that some dummy

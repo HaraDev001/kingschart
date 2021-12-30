@@ -42,8 +42,7 @@ export default function Home() {
             onClick={() => setPopupVisible(false)}
             className="text-xl ml-5 cursor-pointer"
           >
-            {" "}
-            &times;{" "}
+            &times;
           </span>
         </div>
       ) : (
@@ -56,8 +55,8 @@ export default function Home() {
       >
         <img src="/ellipse.png" className="absolute left-0 mt-36 -z-10" />
         <Header />
-        <div className="flex min-h-screen items-center w-full flex-col lg:flex-row mt-36 lg:mt-auto">
-          <div className="lg:pl-20 lg:w-1/3">
+        <div className="flex lg:min-h-screen items-center w-full flex-col lg:flex-row mt-30 lg:mt-auto">
+          <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>
               <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal lg:mt-auto">
                 I will teach you trade in 60 minutes
@@ -90,17 +89,17 @@ export default function Home() {
         <div className="bg-[#00bb9910] absolute top-0 left-0 h-full w-full -z-10"></div>
       </div>
 
-      <div className="container mx-auto px-5 lg:px-20 flex text-center my-20 flex-wrap lg:flex-nowrap">
+      <div className="container mx-auto px-5 lg:px-20 flex text-center mt-20 flex-wrap lg:flex-nowrap">
         <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mr-5 p-5">
           LEARN
         </div>
         <div className="bg-[#761bff36] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mx-5 p-5">
           APPLY
         </div>
-        <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mx-5 p-5">
+        <div className="bg-[#fd4c5b2d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mx-5 p-5">
           GROW
         </div>
-        <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:ml-5 p-5">
+        <div className="bg-[#ffc83e2d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:ml-5 p-5">
           SUCCEED
         </div>
       </div>
@@ -110,7 +109,7 @@ export default function Home() {
           <img className="w-full" src="/services.svg" />
         </div>
 
-        <div className="px-5 lg:p-10 lg:w-1/2">
+        <div className="px-5 py-10 lg:p-10 lg:w-1/2">
           <h2 className="text-2xl font-black">
             Why learn to trade with King’sChart?
           </h2>
@@ -192,22 +191,22 @@ export default function Home() {
 
       <div className="flex items-center px-5 lg:px-20 flex-wrap">
         <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
-          <h3 className="text-5xl font-bold text-blue-600">54K</h3>
+          <h3 className="text-5xl font-bold text-[#2B59FF]">54K</h3>
           <p>Followers</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-yellow-600">67</h3>
+          <h3 className="text-5xl font-bold text-[#FFC83E]">67</h3>
           <p>Counties</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-green-500">236</h3>
+          <h3 className="text-5xl font-bold text-[#00BB98]">236</h3>
           <p>Online Lectures</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-red-500">22K</h3>
+          <h3 className="text-5xl font-bold text-[#FD4C5C]">22K</h3>
           <p>Current Students</p>
         </div>
       </div>
