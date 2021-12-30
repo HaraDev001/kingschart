@@ -12,7 +12,8 @@ export default function Home() {
     <div>
       <Head>
         <title>KingsChart</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       {isPopupVisible ? (
@@ -23,7 +24,7 @@ export default function Home() {
             transform: "translateX(-50%)",
             zIndex: "10",
           }}
-          className="shadow flex p-5 fixed bg-white rounded-lg items-center"
+          className="shadow-lg flex p-5 fixed bg-white rounded-lg items-center w-5/6 lg:w-auto"
         >
           <p>Join our free telegram group to get a free weekly trade call</p>
           <Link href="/">
@@ -42,67 +43,65 @@ export default function Home() {
       )}
 
       <div
-        className="h-screen flex relative"
+        className="min-h-screen w-screen flex items-center justify-center relative"
         style={{ backgroundImage: "url('/herobg.png')" }}
       >
-        <img src="/ellipse.png" className="absolute left-0 mt-36" />
+        <img src="/ellipse.png" className="absolute left-0 mt-36 -z-10" />
         <Header />
-        <div className="flex h-screen items-center w-full ">
-          <div className="pl-20 w-1/3">
-            <h1 className="text-6xl text-[#000B33] font-black">
-              I will teach you trade in 60 minutes
-            </h1>
-            <p>
-              Yes, you needonly 60 mins to get started with trading and it
-              doesn't matter what level you are at.
-            </p>
-            <form className="flex bg-white items-center justify-between rounded-lg mt-5 px-4">
-              <input
-                className="flex-1 px-2 py-6 rounded-lg"
-                type="text"
-                placeholder="Enter your email address"
-              />
-              <input
-                className="bg-[#FD4C5C] text-white py-3 px-4 rounded-lg"
-                type="submit"
-                value="I'm Ready to Learn"
-              />
-            </form>
+        <div className="flex min-h-screen items-center w-full flex-col lg:flex-row mt-36 lg:mt-auto">
+          <div className="lg:pl-20 lg:w-1/3">
+            <div className="mx-10">
+              <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal lg:mt-auto">
+                I will teach you trade in 60 minutes
+              </h1>
+              <p>
+                Yes, you needonly 60 mins to get started with trading and it
+                doesn't matter what level you are at.
+              </p>
+              <form className="flex bg-white lg:items-center lg:justify-between rounded-lg mt-5 lg:px-4">
+                <input
+                  className="flex-1 p-3 rounded-lg"
+                  type="text"
+                  placeholder="Enter your email address"
+                />
+                <input
+                  className="bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm"
+                  type="submit"
+                  value="I'm Ready to Learn"
+                />
+              </form>
+            </div>
           </div>
 
-          <div className="flex-1 flex justify-end py-10">
-            <img className="w-2/3" src="/hero-image.png" />
+          <div className="flex-1 flex justify-end lg:py-10">
+            <img className="max-w-full h-auto" src="/hero-image.png" />
           </div>
         </div>
         <div className="bg-[#00bb9910] absolute top-0 left-0 h-full w-full -z-10"></div>
       </div>
 
-      <div className="container mx-auto px-20 flex text-center py-20">
-        <div className="bg-[#00bb994d] font-black text-4xl w-1/4 mr-5 p-5">
-          {" "}
+      <div className="container mx-auto px-5 lg:px-20 flex text-center my-20 flex-wrap lg:flex-nowrap">
+        <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mr-5 p-5">
           LEARN
         </div>
-        <div className="bg-[#761bff36] font-black text-4xl w-1/4 mx-5 p-5">
-          {" "}
+        <div className="bg-[#761bff36] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mx-5 p-5">
           APPLY
         </div>
-        <div className="bg-[#00bb994d] font-black text-4xl w-1/4 mx-5 p-5">
-          {" "}
+        <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mx-5 p-5">
           GROW
         </div>
-        <div className="bg-[#00bb994d] font-black text-4xl w-1/4 ml-5 p-5">
-          {" "}
+        <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:ml-5 p-5">
           SUCCEED
         </div>
       </div>
 
-      <div className="h-screen flex items-center justify-center px-20">
-        <div className="w-1/2 text-left ">
-          <img src="/services.svg" />
+      <div className="h-screen flex items-center justify-center lg:px-20 flex-col lg:flex-row">
+        <div className="w-full lg:w-1/2">
+          <img className="w-full" src="/services.svg" />
         </div>
 
-        <div className="p-10 w-1/2">
-          <h2 className="text-4xl font-black">
+        <div className="px-5 lg:p-10 lg:w-1/2">
+          <h2 className="text-2xl font-black">
             Why learn to trade with King’sChart?
           </h2>
           <p>
@@ -112,7 +111,11 @@ export default function Home() {
           </p>
 
           <div className="mt-10 ">
-            <Link href=""><a className="px-6 py-4 bg-[#FD4C5C] text-white rounded-lg">Get Started</a></Link>
+            <Link href="">
+              <a className="px-6 py-4 bg-[#FD4C5C] text-white rounded-lg">
+                Get Started
+              </a>
+            </Link>
           </div>
         </div>
       </div>

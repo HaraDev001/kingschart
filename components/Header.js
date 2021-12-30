@@ -8,12 +8,15 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-const Header = () => (
-  <nav className="py-5 flex justify-between items-center absolute top-0 left-0 w-full px-20">
+const Header = () => {
+  
+
+  return (
+  <nav className="py-5 flex justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
     <div className="w-1/4">
       <img src="/logo.png" alt="" />
     </div>
-    <div className="w-2/4 text-center">
+    <div className="hidden lg:block w-2/4 text-center">
       <ul>
         <li className="inline-block mx-4 font-bold">
           <Link href="/">
@@ -47,7 +50,7 @@ const Header = () => (
       </ul>
     </div>
 
-    <div className="w-1/4 text-right">
+    <div className="hidden lg:block w-1/4 text-right">
       <Link href="/">
         <a className="px-5">
           Login
@@ -60,6 +63,6 @@ const Header = () => (
       </Link>
     </div>
   </nav>
-);
+)}
 
 export default Header;

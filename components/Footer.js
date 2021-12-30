@@ -10,8 +10,8 @@ import {
 
 const Footer = () => (
   <div>
-    <div className="flex justify-between pt-20">
-      <div className="w-1/4 pr-5">
+    <div className="flex justify-between pt-20 flex-col lg:flex-row">
+      <div className="lg:w-1/4 pr-5">
         <img src="/text-logo.png" alt="" />
         <p className="mt-5">
           There are many variations of passages of Lorem the Ipsum available but
@@ -45,7 +45,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 w-1/4">
+      <div className="p-5 lg:flex-row-reversew-1/4">
         <ul>
           <li className="font-bold mb-3">Education</li>
 
@@ -75,7 +75,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 w-1/4">
+      <div className="p-5 lg:w-1/4">
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Quick Links</li>
 
@@ -105,7 +105,7 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="p-5 w-1/4">
+      <div className="p-5 lg:w-1/4">
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Our Support Download</li>
 
