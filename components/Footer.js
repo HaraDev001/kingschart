@@ -22,24 +22,32 @@ const Footer = () => (
         <ul className="mt-5">
           <li className="w-4 mr-3 inline-block">
             <Link href="/">
-              <FontAwesomeIcon icon={faInstagram} />
+              <a className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
             </Link>
           </li>
           <li className="w-4 mx-3 inline-block">
             <Link href="/">
-              <FontAwesomeIcon icon={faLinkedinIn} />
+              <a className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
             </Link>
           </li>
 
           <li className="w-4 mx-3 inline-block">
             <Link href="/">
-              <FontAwesomeIcon icon={faFacebookSquare} />
+              <a className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon icon={faFacebookSquare} />
+              </a>
             </Link>
           </li>
 
           <li className="w-4 ml-3 inline-block">
             <Link href="/">
-              <FontAwesomeIcon icon={faTwitter} />
+              <a className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
             </Link>
           </li>
         </ul>
@@ -133,9 +141,9 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="mt-10 text-center text-[#000B33] text-sm"> 
-        <hr className="opacity-10" />
-        <p className="py-10">© 2021 King’s Chart All Rights Reserved.</p>
+    <div className="mt-10 text-center text-[#000B33] text-sm">
+      <hr className="opacity-10" />
+      <p className="py-10">© 2021 King’s Chart All Rights Reserved.</p>
     </div>
   </div>
 );
