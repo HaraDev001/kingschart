@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Header = () => {
+const HeaderALT = () => {
   return (
     <nav className="py-5 flex justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
       <div className="w-1/4">
@@ -11,31 +11,25 @@ const Header = () => {
         <ul>
           <li className="inline-block mx-4 font-bold">
             <Link href="/courses">
-              <a>Cources</a>
+              <a>On Going</a>
             </Link>
           </li>
 
           <li className="inline-block mx-4 font-bold">
             <Link href="/">
-              <a>Demos</a>
+              <a>Recorded</a>
             </Link>
           </li>
 
           <li className="inline-block mx-4 font-bold">
             <Link href="/">
-              <a>Features</a>
+              <a>Live</a>
             </Link>
           </li>
 
           <li className="inline-block mx-4 font-bold">
             <Link href="/">
-              <a>Pricing</a>
-            </Link>
-          </li>
-
-          <li className="inline-block mx-4 font-bold">
-            <Link href="/">
-              <a>Contact</a>
+              <a>Masterclass</a>
             </Link>
           </li>
         </ul>
@@ -43,16 +37,11 @@ const Header = () => {
 
       <div className="hidden lg:block w-1/4 text-right">
         <Link href="/auth/login">
-          <a className="px-5">Login</a>
-        </Link>
-        <Link href="/auth/signup">
-          <a className="transition-colors mr-1 px-5 py-2 bg-[#FD4C5C] text-white hover:bg-black rounded-sm">
-            Sign Up
-          </a>
+          <a className="px-5 bg-[#FD4C5C] text-white py-4">My Courses</a>
         </Link>
       </div>
     </nav>
   );
 };
 
-export default Header;
+export default HeaderALT;

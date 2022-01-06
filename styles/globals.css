@@ -9,23 +9,20 @@
   font-weight: 900;
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
-   width: 100%;
-   margin: 0;
-   overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
 }
-
 
 body {
   font-family: "Sofia";
-  color: #000B33;
+  color: #000b33;
 }
 
 *:hover,

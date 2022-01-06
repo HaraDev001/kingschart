@@ -8,10 +8,15 @@ import {
   faFacebookSquare,
   faInstagram,
   faLinkedinIn,
+  faTelegram,
+  faTelegramPlane,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 import { useState } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [isPopupVisible, setPopupVisible] = useState(true);
@@ -189,7 +194,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex items-center px-5 lg:px-20 flex-wrap">
+      <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
         <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
           <h3 className="text-5xl font-bold text-[#2B59FF]">54K</h3>
           <p>Followers</p>
@@ -208,6 +213,126 @@ export default function Home() {
         <div className="text-center w-1/2 lg:w-1/4 p-5">
           <h3 className="text-5xl font-bold text-[#FD4C5C]">22K</h3>
           <p>Current Students</p>
+        </div>
+      </div>
+
+      <div className="mt-40 lg:px-20">
+        <h2 className="text-5xl font-bold">Crypto alerts and news</h2>
+      </div>
+
+      <div className="mt-10 mb-40 ">
+        <Swiper
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={4}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {[1, 2, 3, 4, 5, 6].map((element) => (
+            <SwiperSlide className="py-10" key={element}>
+              <div className="shadow-lg">
+                <img src="/blog-image.png" />
+                <div className="p-5">
+                  <span className="flex items-center text-[#377CFD]">
+                    <FontAwesomeIcon
+                      style={{ width: "15px" }}
+                      icon={faCalendar}
+                    />
+
+                    <small className="mx-2">{10 + element} May, 2021</small>
+                  </span>
+                  <h4 className="my-5 font-bold">NFT Beginner to Pro</h4>
+                  <p className="text-sm opacity-80">
+                    It is almost impossible to read the news without coming
+                    across a lead story elections through fake social media
+                    accounts...
+                  </p>
+
+                  <div className="mt-5">
+                    <Link href="/">
+                      <span className="flex text-[#FD4C5C] cursor-pointer">
+                        <a>Read more</a>
+                        <FontAwesomeIcon
+                          className="mx-5"
+                          width="10"
+                          icon={faArrowRight}
+                        />
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <div className="mt-40 lg:px-20">
+        <h2 className="text-5xl font-bold text-center">
+          What our Happy Students say
+        </h2>
+      </div>
+
+      <div className="mt-10 mb-40 mx-auto container px-20">
+        <Swiper
+          className="pt-10"
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {[1, 2, 3, 4, 5, 6].map((element) => (
+            <SwiperSlide className="p-5" key={element}>
+              <div className="flex">
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src="https://source.unsplash.com/kVg2DQTAK7c/50x50"
+                />
+                <div className="mx-4">
+                  <h5>Shilpa Shetty</h5>
+                  <small className="opacity-80">Commerce Student</small>
+                </div>
+              </div>
+
+              <p className="mt-5">
+                OMG! I cannot believe that I have got a brand new landing page
+                after getting appmax. It was super easy to edit and publish.
+              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <div className="flex">
+        <div className="w-1/2 text-center flex justify-center">
+          <img className="w-4/6" src="/join-telegram.png" />
+        </div>
+
+        <div className="w-1/2 flex justify-center items-center px-20">
+          <div>
+            <h2 className="text-5xl font-bold">Join our free telegram</h2>
+            <p className="my-5">
+              Join our free telegram for all your questions, Find out about the
+              most frequently asked questions related to our online trading
+              courses
+            </p>
+
+            <div className="mt-10">
+              <Link href="/">
+                <div className="flex">
+                  <a className="px-10 cursor-pointer  py-5 hover:bg-black rounded-full bg-[#FD4C5C] text-white">
+                    Join Now
+                  </a>
+                  <FontAwesomeIcon
+                    className="mx-5"
+                    width="30"
+                    icon={faTelegramPlane}
+                  />
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
