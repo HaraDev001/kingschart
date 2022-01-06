@@ -37,7 +37,9 @@ const HeaderALT = () => {
 
       <div className="hidden lg:block w-1/4 text-right">
         <Link href="/auth/login">
-          <a className="px-5 bg-[#FD4C5C] text-white py-4">My Courses</a>
+          <a className="px-5 bg-[#FD4C5C] hover:bg-black text-white py-4">
+            My Courses
+          </a>
         </Link>
       </div>
     </nav>
