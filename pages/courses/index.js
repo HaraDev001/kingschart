@@ -5,6 +5,7 @@ import {
   faChartLine,
   faClock,
   faHeart,
+  faSearch,
   faStar,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
@@ -20,18 +21,23 @@ export default function Courses() {
       </Head>
 
       <HeaderALT />
-      <div className="mt-36 lg:px-20 flex w-full justify-between">
+      <div className="mt-36 px-5 lg:px-20 flex flex-col lg:flex-row w-full justify-between">
         <h2 className="text-4xl font-bold">Courses</h2>
-        <input
-          className="border bg-[#F5F9FF] border-[#347AF6] rounded-md px-4 w-1/3"
-          placeholder="Try Crypto"
-          type="text"
-        />
+        <div className="relative w-full lg:w-1/3">
+          <span className="absolute top-1/2 -translate-y-1/2 ml-5 select-none">
+            <FontAwesomeIcon width="10" icon={faSearch} />
+          </span>
+          <input
+            className="border bg-[#F5F9FF] border-[#347AF6] rounded-md pr-4 pl-10 py-2 w-full"
+            placeholder="Try Crypto"
+            type="text"
+          />
+        </div>
       </div>
 
-      <div className="mt-20 lg:px-20 grid grid-cols-4 justify-between">
+      <div className="mt-20 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:justify-between gap-5">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((element) => (
-          <div className="m-2 shadow-lg rounded-lg" key={element}>
+          <div className="shadow-lg rounded-lg" key={element}>
             <img className="w-full" src="/course.png" />
             <div className="p-5">
               <div className="flex items-center">
@@ -67,21 +73,27 @@ export default function Courses() {
               </div>
               <div className="flex">
                 <div className="p-5 text-center">
-                  <FontAwesomeIcon icon={faClock} />
+                  <div className="flex justify-center">
+                    <FontAwesomeIcon width="15" icon={faClock} />
+                  </div>
                   <p>
                     <small>120 mins</small>
                   </p>
                 </div>
 
                 <div className="p-5 text-center">
-                  <FontAwesomeIcon icon={faChartBar} />
+                  <div className="flex justify-center">
+                    <FontAwesomeIcon width="15" icon={faChartBar} />
+                  </div>
                   <p>
                     <small>Beginner</small>
                   </p>
                 </div>
 
                 <div className="p-5 text-center">
-                  <FontAwesomeIcon icon={faUsers} />
+                  <div className="flex justify-center">
+                    <FontAwesomeIcon width="15" icon={faUsers} />
+                  </div>
                   <p>
                     <small>2.6K enrolled</small>
                   </p>
