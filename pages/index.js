@@ -17,9 +17,34 @@ import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import Accordion from "../components/Accordion";
+import axios from "axios";
+import settings from "../settings";
 
 export default function Home() {
   const [isPopupVisible, setPopupVisible] = useState(true);
+  const [email, setEmail] = useState("");
+  const [clicked, setclicked] = useState("I'm Ready");
+
+  function subscribe(e) {
+    e.preventDefault();
+    if (email == "") {
+      setclicked("Try Again");
+    } else {
+      axios
+        .post(`${settings.APIURL}/newsletters`, {
+          data: {
+            email: email,
+          },
+        })
+        .then(function (response) {
+          setclicked("Done!");
+        })
+        .catch(function (error) {
+          setclicked("Try Again Later");
+        });
+    }
+  }
 
   return (
     <div>
@@ -40,9 +65,15 @@ export default function Home() {
           className="shadow-lg flex p-5 fixed bg-white rounded-lg items-center w-5/6 lg:w-auto"
         >
           <p>Join our free telegram group to get a free weekly trade call</p>
-          <Link href="/">
-            <a className="text-[#F3071C] ml-3">Join now</a>
-          </Link>
+
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="text-[#F3071C] ml-3"
+          >
+            Join now
+          </a>
+
           <span
             onClick={() => setPopupVisible(false)}
             className="text-xl ml-5 cursor-pointer"
@@ -63,23 +94,28 @@ export default function Home() {
         <div className="flex lg:min-h-screen items-center w-full flex-col lg:flex-row mt-30 lg:mt-auto">
           <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>
-              <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal lg:mt-auto">
-                I will teach you trade in 60 minutes
+              <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto">
+                Start your l(earn)ing journey today
               </h1>
               <p>
                 Yes, you needonly 60 mins to get started with trading and it
                 doesn't matter what level you are at.
               </p>
-              <form className="flex bg-white lg:items-center lg:justify-between rounded-lg mt-5 lg:px-4">
+              <form
+                onSubmit={subscribe}
+                className="flex bg-white lg:items-center lg:justify-between rounded-lg mt-5 lg:px-4"
+              >
                 <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 p-3 rounded-lg"
-                  type="text"
+                  type="email"
                   placeholder="Enter your email address"
                 />
                 <input
                   className="bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm hover:bg-black"
                   type="submit"
-                  value="I'm Ready to Learn"
+                  value={clicked}
                 />
               </form>
             </div>
@@ -139,13 +175,10 @@ export default function Home() {
         <div className="lg:w-1/3 p-5 lg:py-10 lg:pr-20">
           <h2 className="text-4xl font-bold">About Us</h2>
           <p className="mt-5 opacity-70">
-            We cover every angle and capture every opportunity encircling
-            graphics and identity, websites and digital experiences, advertising
-            and communications. Our aim is to drive growth, build platforms that
-            solve problems, and develop marketing strategies to help great
-            brands create a greater impact. By merging imagination and
-            technology, we use iterative problem solving to leave a real digital
-            impact.
+            The recent digitization of assets has revolutionized the financial
+            space. Our aim is to bring this revolution to every keen investor
+            out there by simplifying complex concepts and helping them benefit
+            from this technological revolution.
           </p>
 
           <div className="mt-5">
@@ -160,11 +193,13 @@ export default function Home() {
             <img className="cursor-pointer" src="/aboutus-image.png" alt="" />
             <ul className="mt-5">
               <li className="w-4 mr-3 inline-block">
-                <Link href="/">
-                  <a className="hover:text-[#FD4C5C]">
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </a>
-                </Link>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/kingscharts/"
+                  className="hover:text-[#FD4C5C]"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
               </li>
               <li className="w-4 mx-3 inline-block">
                 <Link href="/">
@@ -196,23 +231,23 @@ export default function Home() {
 
       <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
         <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
-          <h3 className="text-5xl font-bold text-[#2B59FF]">54K</h3>
+          <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
           <p>Followers</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FFC83E]">67</h3>
-          <p>Counties</p>
+          <h3 className="text-5xl font-bold text-[#FFC83E]">10+</h3>
+          <p>Countries</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#00BB98]">236</h3>
-          <p>Online Lectures</p>
+          <h3 className="text-5xl font-bold text-[#00BB98]">500+</h3>
+          <p>Premium Members</p>
         </div>
 
         <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FD4C5C]">22K</h3>
-          <p>Current Students</p>
+          <h3 className="text-5xl font-bold text-[#FD4C5C]">1000+</h3>
+          <p>Course Students</p>
         </div>
       </div>
 
@@ -223,8 +258,22 @@ export default function Home() {
       <div className="mt-10 mb-40 ">
         <Swiper
           loop={true}
+          breakpoints={{
+            // when window width is >= 640px
+            576: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+          }}
           spaceBetween={10}
-          slidesPerView={4}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
@@ -278,7 +327,19 @@ export default function Home() {
           className="pt-10"
           loop={true}
           spaceBetween={10}
-          slidesPerView={3}
+          loop={true}
+          breakpoints={{
+            // when window width is >= 640px
+            576: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
@@ -334,6 +395,93 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="min-h-screen xl:px-20 flex justify-center">
+        <div className="mt-48 w-full">
+          <div className="text-center">
+            <h2 className="text-5xl font-bold">Frequently Asked Questions</h2>
+            <p className="my-5">
+              Haven't got your answer?{" "}
+              <Link href="/">
+                <a className="text-blue-500">Contact our support now</a>
+              </Link>
+            </p>
+          </div>
+
+          <div className="flex w-full flex-wrap">
+            {[
+              {
+                id: 0,
+                title: "How is a egg fried?",
+                content: "Throw an egg in hot oil",
+              },
+              {
+                id: 1,
+                title: "How to make crisp?",
+                content: "Just do it",
+              },
+              {
+                id: 2,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 3,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 4,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 5,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 6,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 7,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+            ].map((element) => (
+              <div
+                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block"
+                key={element.id}
+              >
+                <Accordion title={element.title}>{element.content}</Accordion>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-5 xl:px-20 relative hidden xl:block">
+        <div className="text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+          <h2 className="hidden xl:block xl:text-4xl font-bold text-white">
+            Want us to email you about special offers &amp; updates?
+          </h2>
+          <form className="flex flex-col xl:flex-row justify-center items-center xl:bg-white rounded-md mt-2 w-full lg:w-3/4">
+            <input
+              className="p-3 w-full rounded-md"
+              type="email"
+              placeholder="Enter your email"
+            />
+            <input
+              className="w-full xl:w-1/4 bg-[#FD4C5C] text-white p-2 mr-1 rounded-md"
+              type="submit"
+              value="Subscribe Now"
+            />
+          </form>
+        </div>
+        <img src="/newsletter.png" />
       </div>
 
       <div className="container mx-auto px-10">

@@ -1,17 +1,13 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Head from "next/head";
 import Link from "next/link";
 import FormInputBlock from "../../components/FormInputBlock";
 
-export default function SignUp() {
+export default function Reset() {
   return (
     <div className="flex w-screen h-screen items-center">
-      <Head>
-        <title>Register Today on KingsChart!</title>
-      </Head>
-      <div className="h-full w-1/2 overflow-hidden hidden xl:block">
-        <img src="/login.png" alt="" />
+      <div className="h-full w-1/2 overflow-hidden hidden lg:block xl:block">
+        <img className="w-auto h-full" src="/login.png" alt="" />
       </div>
 
       <div className="h-full w-full xl:w-1/2 flex items-center justify-center p-10">
@@ -40,30 +36,18 @@ export default function SignUp() {
               <span className="mx-4">Home</span>
             </small>
           </Link>
-          <h1 className="font-extrabold text-4xl">Create your account</h1>
+          <h1 className="font-extrabold text-4xl">Reset Password</h1>
 
           <form action="">
-            <FormInputBlock label="Your name" required>
-              <input
-                placeholder="full name"
-                className="border rounded-lg w-full py-2 px-4"
-                type="email"
-              />
-            </FormInputBlock>
-
-            <FormInputBlock label="Your Email Address" required>
-              <input
-                placeholder="Enter Email Address"
-                className="border rounded-lg w-full py-2 px-4"
-                type="email"
-              />
+            <FormInputBlock label="Email Address" required>
+              <input className="border rounded-lg w-full p-2" type="email" />
             </FormInputBlock>
 
             <button
               className="block w-full p-2 mt-2 hover:bg-black bg-[#FD4C5C] text-white"
               type="submit"
             >
-              Create Your Account
+              Send Reset Link
             </button>
 
             <p className="mt-5">

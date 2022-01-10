@@ -10,8 +10,8 @@ export default function Login() {
       <Head>
         <title>Login in</title>
       </Head>
-      <div className="h-full w-1/2 overflow-hidden hidden xl:block">
-        <img src="/login.png" alt="" />
+      <div className="h-full w-1/2 overflow-hidden hidden lg:block xl:block">
+        <img className="w-auto h-full" src="/login.png" alt="" />
       </div>
 
       <div className="h-full xl:w-1/2 flex items-center justify-center p-10">
