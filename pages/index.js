@@ -121,7 +121,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 flex justify-end lg:py-10">
+          <div className="flex-1 flex justify-end lg:my-10">
             <div>
               <img className="" src="/hero-image.png" />
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="bg-[#00bb9910] absolute top-0 left-0 h-full w-full -z-10"></div>
       </div>
 
-      <div className="container mx-auto px-5 lg:px-20 flex text-center mt-20 flex-wrap lg:flex-nowrap">
+      <div className="container mx-auto px-5 lg:px-20 flex text-center my-20 flex-wrap lg:flex-nowrap">
         <div className="bg-[#00bb994d] font-black text-sm lg:text-4xl w-1/2 lg:w-1/4 lg:mr-5 p-5">
           LEARN
         </div>
@@ -145,12 +145,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-screen flex items-center justify-center lg:px-20 flex-col lg:flex-row">
-        <div className="w-full lg:w-1/2">
-          <img className="w-full" src="/services.svg" />
+      <div className="flex items-center justify-center lg:px-20 flex-col lg:flex-row my-5">
+        <div className="w-full lg:w-1/2 md:mt-20">
+          <img className="w-full h-full" src="/services.svg" />
         </div>
 
-        <div className="px-5 py-10 lg:p-10 lg:w-1/2">
+        <div className="px-5 my-10 lg:p-10 lg:w-1/2">
           <h2 className="text-2xl font-black">
             Why learn to trade with King’sChart?
           </h2>
@@ -171,8 +171,8 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className="h-screen flex items-center lg:justify-between lg:px-20 flex-col lg:flex-row">
-        <div className="lg:w-1/3 p-5 lg:py-10 lg:pr-20">
+      <div className="h-screen flex items-center lg:justify-between lg:px-20 flex-col lg:flex-row  my-20 lg:my-5">
+        <div className="lg:w-1/3 p-5 lg:my-10 lg:pr-20">
           <h2 className="text-4xl font-bold">About Us</h2>
           <p className="mt-5 opacity-70">
             The recent digitization of assets has revolutionized the financial
@@ -251,11 +251,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-40 lg:px-20">
+      <div className="mt-40 px-5 lg:px-20">
         <h2 className="text-5xl font-bold">Crypto alerts and news</h2>
       </div>
 
-      <div className="mt-10 mb-40 ">
+      <div className="mt-10 mb-40 flex justify-center items-center px-5">
         <Swiper
           loop={true}
           breakpoints={{
@@ -365,12 +365,12 @@ export default function Home() {
         </Swiper>
       </div>
 
-      <div className="flex">
-        <div className="w-1/2 text-center flex justify-center">
+      <div className="flex flex-col lg:flex-row items-center">
+        <div className="lg:w-1/2 text-center flex justify-center">
           <img className="w-4/6" src="/join-telegram.png" />
         </div>
 
-        <div className="w-1/2 flex justify-center items-center px-20">
+        <div className="lg:w-1/2 flex justify-center items-center px-20 mt-10">
           <div>
             <h2 className="text-5xl font-bold">Join our free telegram</h2>
             <p className="my-5">
@@ -380,7 +380,7 @@ export default function Home() {
             </p>
 
             <div className="mt-10">
-              <Link href="/">
+              <a target="_blank" href="https://t.me/Kingchart">
                 <div className="flex">
                   <a className="px-10 cursor-pointer  py-5 hover:bg-black rounded-full bg-[#FD4C5C] text-white">
                     Join Now
@@ -391,7 +391,7 @@ export default function Home() {
                     icon={faTelegramPlane}
                   />
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
