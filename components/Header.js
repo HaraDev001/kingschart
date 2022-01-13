@@ -6,9 +6,18 @@ const Header = () => {
   const [isActive, setActive] = useState(false);
   return (
     <>
-      <nav className="flex lg:hidden py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
+      <nav className="flex lg:hidden container mx-auto py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
         <div className="w-1/4">
-          <img src="/logo.png" alt="" />
+          <Link href="/">
+            <a className="cursor-pointer">
+              <img
+                width="150"
+                className="cursor-pointer"
+                src="/logo.svg"
+                alt=""
+              />
+            </a>
+          </Link>
         </div>
 
         <div onClick={() => setActive(true)} className="cursor-pointer">
@@ -64,7 +73,7 @@ const Header = () => {
 
       <nav className="hidden lg:flex py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
         <div className="w-1/4">
-          <img src="/logo.png" alt="" />
+          <img width="150" className="cursor-pointer" src="/logo.svg" alt="" />
         </div>
         <div className="hidden lg:block w-2/4 text-center">
           <ul>

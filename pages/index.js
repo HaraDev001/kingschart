@@ -97,13 +97,13 @@ export default function Home() {
               <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto">
                 Start your l(earn)ing journey today
               </h1>
-              <p>
+              <p className="my-5">
                 Yes, you needonly 60 mins to get started with trading and it
                 doesn't matter what level you are at.
               </p>
               <form
                 onSubmit={subscribe}
-                className="flex bg-white lg:items-center lg:justify-between rounded-lg mt-5 lg:px-4"
+                className="flex bg-white lg:items-center lg:justify-between rounded-lg lg:px-4"
               >
                 <input
                   value={email}
@@ -465,7 +465,7 @@ export default function Home() {
 
       <div className="container mx-auto px-5 xl:px-20 relative hidden xl:block">
         <div className="text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-          <h2 className="hidden xl:block xl:text-4xl font-bold text-white">
+          <h2 className="hidden md:block xl:text-4xl font-bold text-white">
             Want us to email you about special offers &amp; updates?
           </h2>
           <form className="flex flex-col xl:flex-row justify-center items-center xl:bg-white rounded-md mt-2 w-full lg:w-3/4">
