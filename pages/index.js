@@ -16,7 +16,11 @@ import {
 import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faCalendar,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
@@ -24,13 +28,13 @@ import settings from "../settings";
 export default function Home() {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
-  const [clicked, setclicked] = useState("I'm Ready");
+  const [clicked, setclicked] = useState(false);
+  const [sent, setSent] = useState(false);
 
   function subscribe(e) {
     e.preventDefault();
-    if (email == "") {
-      setclicked("Try Again");
-    } else {
+    setclicked(true);
+    if (email !== "") {
       axios
         .post(`${settings.APIURL}/newsletters`, {
           data: {
@@ -38,10 +42,11 @@ export default function Home() {
           },
         })
         .then(function (response) {
-          setclicked("Done!");
+          setSent(true);
+          // setclicked(false);
         })
         .catch(function (error) {
-          setclicked("Try Again Later");
+          setSent(false);
         });
     }
   }
@@ -94,16 +99,20 @@ export default function Home() {
         <div className="flex lg:min-h-screen items-center w-full flex-col lg:flex-row mt-30 lg:mt-auto">
           <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>
-              <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto">
+              <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto capitalize">
                 Start your l(earn)ing journey today
               </h1>
               <p className="my-5">
                 Yes, you needonly 60 mins to get started with trading and it
                 doesn't matter what level you are at.
               </p>
+
               <form
                 onSubmit={subscribe}
-                className="flex bg-white lg:items-center lg:justify-between rounded-lg lg:px-4"
+                className={`flex bg-white shadow-lg lg:items-center lg:justify-between rounded-lg lg:px-4 ${
+                  clicked === true &&
+                  (email.length == 0 ? "border border-red-500" : "")
+                }`}
               >
                 <input
                   value={email}
@@ -112,11 +121,20 @@ export default function Home() {
                   type="email"
                   placeholder="Enter your email address"
                 />
-                <input
+                <button
                   className="bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm hover:bg-black"
                   type="submit"
-                  value={clicked}
-                />
+                >
+                  {clicked == true ? (
+                    sent == true ? (
+                      <FontAwesomeIcon icon={faCheck} width="15" />
+                    ) : (
+                      "Try Again"
+                    )
+                  ) : (
+                    "I'm Ready to Learn"
+                  )}
+                </button>
               </form>
             </div>
           </div>
@@ -204,7 +222,7 @@ export default function Home() {
               <li className="w-4 mx-3 inline-block">
                 <Link href="/">
                   <a className="hover:text-[#FD4C5C]">
-                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    <FontAwesomeIcon icon={faTelegram} />
                   </a>
                 </Link>
               </li>

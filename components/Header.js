@@ -6,7 +6,7 @@ const Header = () => {
   const [isActive, setActive] = useState(false);
   return (
     <>
-      <nav className="flex lg:hidden container mx-auto py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
+      <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
         <div className="w-1/4">
           <Link href="/">
             <a className="cursor-pointer">
@@ -48,19 +48,19 @@ const Header = () => {
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/">
-            <a>Demos</a>
+            <a>Our Services</a>
           </Link>
         </li>
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/">
-            <a>Features</a>
-          </Link>
-        </li>
-
-        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/">
+          <Link href="/pricing">
             <a>Pricing</a>
+          </Link>
+        </li>
+
+        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
+          <Link href="/">
+            <a>Blogs</a>
           </Link>
         </li>
 
@@ -71,7 +71,7 @@ const Header = () => {
         </li>
       </ul>
 
-      <nav className="hidden lg:flex py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
+      <nav className="hidden bg-white lg:flex py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
         <div className="w-1/4">
           <img width="150" className="cursor-pointer" src="/logo.svg" alt="" />
         </div>
@@ -85,19 +85,19 @@ const Header = () => {
 
             <li className="inline-block mx-4 font-bold">
               <Link href="/">
-                <a>Demos</a>
+                <a>Our Services</a>
               </Link>
             </li>
 
             <li className="inline-block mx-4 font-bold">
-              <Link href="/">
-                <a>Features</a>
-              </Link>
-            </li>
-
-            <li className="inline-block mx-4 font-bold">
-              <Link href="/">
+              <Link href="/pricing">
                 <a>Pricing</a>
+              </Link>
+            </li>
+
+            <li className="inline-block mx-4 font-bold">
+              <Link href="/">
+                <a>Blogs</a>
               </Link>
             </li>
 
