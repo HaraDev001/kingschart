@@ -2,10 +2,12 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import FormInputBlock from "../../components/FormInputBlock";
 
 export default function SignUp() {
+  const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [password_match, setPasswordMatch] = useState(true);
@@ -26,7 +28,7 @@ export default function SignUp() {
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                  className="icon icon-tabler icon-tabler-arrow-narrow-left"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -47,12 +49,13 @@ export default function SignUp() {
           </Link>
           <h1 className="font-extrabold text-4xl">Create your account</h1>
 
-          <form action="">
+          <form action="/404">
             <FormInputBlock label="Your name" required>
               <input
                 placeholder="full name"
                 className="border rounded-lg w-full py-2 px-4"
                 type="text"
+                required
               />
             </FormInputBlock>
 
@@ -61,6 +64,7 @@ export default function SignUp() {
                 placeholder="Enter Email Address"
                 className="border rounded-lg w-full py-2 px-4"
                 type="email"
+                required
               />
             </FormInputBlock>
 
@@ -79,6 +83,7 @@ export default function SignUp() {
                   }
                 }}
                 value={password}
+                required
               />
             </FormInputBlock>
 
@@ -99,11 +104,12 @@ export default function SignUp() {
                   }
                 }}
                 value={confirm_password}
+                required
               />
             </FormInputBlock>
 
             <div className="flex items-center py-5">
-              <input type="checkbox" />
+              <input type="checkbox" required />
               <small className="px-2 opacity-80">
                 I agree with the terms &amp; conditions
               </small>
