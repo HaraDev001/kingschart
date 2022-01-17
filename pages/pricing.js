@@ -25,7 +25,7 @@ export default function Pricing() {
           <p>Simple pricing so you can focus on your l(earn)ing</p>
         </div>
 
-        <div className="my-10 grid grid-cols-3">
+        <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <div className="p-5 min-h-full">
             <div className="shadow-lg p-10 bg-white">
               <small className="text-green-600">Free</small>
