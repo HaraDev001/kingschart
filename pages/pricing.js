@@ -14,8 +14,10 @@ export default function Pricing() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <Header />
-      <div className="contanier mx-auto px-5 lg:px-20 bg-[rgba(144,168,254,0.05)] mt-16 pt-20 relative">
+      <div className="container mx-auto px-5 lg:px-20">
+        <Header />
+      </div>
+      <div className="contanier mx-auto px-5 lg:px-20 bg-[rgba(144,168,254,0.05)] pt-20 relative">
         <h1 className="text-6xl font-bold">Pricing &amp; Plans</h1>
         <img className="top-0 right-0 absolute z-0" src="/quater.svg" />
         <div className="text-center ">

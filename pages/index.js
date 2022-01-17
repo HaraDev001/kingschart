@@ -89,13 +89,15 @@ export default function Home() {
       ) : (
         ""
       )}
-
+      <div className="container mx-auto px-5 lg:px-20">
+        <Header />
+      </div>
       <div
         className="min-h-screen w-screen flex items-center justify-center relative"
         style={{ backgroundImage: "url('/herobg.png')" }}
       >
         <img src="/ellipse.png" className="absolute left-0 mt-36 -z-10" />
-        <Header />
+
         <div className="flex lg:min-h-screen items-center w-full flex-col lg:flex-row mt-30 lg:mt-auto">
           <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>

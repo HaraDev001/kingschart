@@ -9,7 +9,9 @@ export default function Contact() {
         <title>Contact Us - King's Chart</title>
       </Head>
 
-      <Header />
+      <div className="container mx-auto px-5 lg:px-20">
+        <Header />
+      </div>
       <div className="container mx-auto px-5 lg:px-20">
         <div className="mt-10">
           <h1 className="text-5xl font-bold">Contact Us</h1>
