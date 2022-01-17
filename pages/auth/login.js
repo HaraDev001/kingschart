@@ -43,7 +43,7 @@ export default function Login() {
           <h1 className="font-extrabold text-4xl">Login to you account</h1>
           <p className="mt-5">
             <small className="opacity-80">Don’t have an account?</small>{" "}
-            <Link href="/">
+            <Link href="/auth/signup">
               <a className="underline text-[#FD4C5C]">Create an account</a>
             </Link>
           </p>

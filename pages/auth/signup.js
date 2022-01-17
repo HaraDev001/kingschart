@@ -2,11 +2,16 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import FormInputBlock from "../../components/FormInputBlock";
 
 export default function SignUp() {
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [password_match, setPasswordMatch] = useState(true);
+
   return (
-    <div className="flex w-screen h-screen items-center">
+    <div className="flex w-screen h-screen items-center justify-between">
       <Head>
         <title>Register Today on KingsChart!</title>
       </Head>
@@ -14,7 +19,7 @@ export default function SignUp() {
         <img className="w-auto h-full" src="/login.png" alt="" />
       </div>
 
-      <div className="h-full w-full xl:w-1/2 flex items-center justify-center p-10">
+      <div className="h-screen w-full xl:w-1/2 flex items-center justify-center p-10">
         <div>
           <Link href="/">
             <small className="my-5 cursor-pointer flex items-center">
@@ -47,7 +52,7 @@ export default function SignUp() {
               <input
                 placeholder="full name"
                 className="border rounded-lg w-full py-2 px-4"
-                type="email"
+                type="text"
               />
             </FormInputBlock>
 
@@ -58,6 +63,51 @@ export default function SignUp() {
                 type="email"
               />
             </FormInputBlock>
+
+            <FormInputBlock label="Password" required>
+              <input
+                placeholder="Minimum 6 characters"
+                className="border rounded-lg w-full py-2 px-4"
+                type="password"
+                minLength="6"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  if (password == e.target.value) {
+                    setPasswordMatch(true);
+                  } else {
+                    setPasswordMatch(false);
+                  }
+                }}
+                value={password}
+              />
+            </FormInputBlock>
+
+            <FormInputBlock label="Confirm Password" required>
+              <input
+                placeholder="Minimum 6 characters"
+                className={`border rounded-lg w-full py-2 px-4 ${
+                  password_match == false ? "border border-red-500" : ""
+                }`}
+                type="password"
+                minLength="6"
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  if (password == e.target.value) {
+                    setPasswordMatch(true);
+                  } else {
+                    setPasswordMatch(false);
+                  }
+                }}
+                value={confirm_password}
+              />
+            </FormInputBlock>
+
+            <div className="flex items-center py-5">
+              <input type="checkbox" />
+              <small className="px-2 opacity-80">
+                I agree with the terms &amp; conditions
+              </small>
+            </div>
 
             <button
               className="block w-full p-2 mt-2 hover:bg-black bg-[#FD4C5C] text-white"
