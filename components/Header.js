@@ -73,7 +73,14 @@ const Header = () => {
 
       <nav className="hidden bg-white lg:flex py-5 justify-between items-center w-full">
         <div className="w-1/4">
-          <img width="150" className="cursor-pointer" src="/logo.svg" alt="" />
+          <Link href="/">
+            <img
+              width="150"
+              className="cursor-pointer"
+              src="/logo.svg"
+              alt=""
+            />
+          </Link>
         </div>
         <div className="hidden lg:block w-2/4 text-center">
           <ul>
