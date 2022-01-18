@@ -47,7 +47,7 @@ const Header = () => {
         </li>
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/">
+          <Link href="/services">
             <a>Our Services</a>
           </Link>
         </li>
@@ -91,7 +91,7 @@ const Header = () => {
             </li>
 
             <li className="inline-block mx-4 font-bold">
-              <Link href="/">
+              <Link href="/services">
                 <a>Our Services</a>
               </Link>
             </li>
