@@ -8,6 +8,7 @@ import {
   faInstagram,
   faLinkedinIn,
   faTelegram,
+  faTelegramPlane,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,7 +23,7 @@ const FooterAlt = () => (
 
       <li className="inline-block mx-4">
         <a href="https://t.me/Kingchart" target="_blank" className="text-black hover:text-[#FD4C5C] cursor-pointer">
-          <FontAwesomeIcon height="30" icon={faTelegram} />
+          <FontAwesomeIcon height="30" icon={faTelegramPlane} />
         </a>
       </li>
 

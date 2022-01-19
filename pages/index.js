@@ -228,27 +228,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
-        <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
-          <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
-          <p>Followers</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FFC83E]">10+</h3>
-          <p>Countries</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#00BB98]">500+</h3>
-          <p>Premium Members</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FD4C5C]">1000+</h3>
-          <p>Course Students</p>
-        </div>
-      </div>
 
       <div className="mt-40 px-5 lg:px-20">
         <h2 className="text-5xl font-bold">Crypto alerts and news</h2>
@@ -313,6 +292,29 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+
+      
+      <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
+        <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
+          <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
+          <p>Followers</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#FFC83E]">10+</h3>
+          <p>Countries</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#00BB98]">500+</h3>
+          <p>Premium Members</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#FD4C5C]">1000+</h3>
+          <p>Course Students</p>
+        </div>
       </div>
 
       <div className="mt-40 lg:px-20">
@@ -396,7 +398,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-screen xl:px-20 flex justify-center">
+      <div className="container mx-auto xl:px-20 px-5 pt-20 pb-40">
         <div className="mt-48 w-full">
           <div className="text-center">
             <h2 className="text-5xl font-bold">Frequently Asked Questions</h2>
@@ -452,7 +454,7 @@ export default function Home() {
               },
             ].map((element) => (
               <div
-                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block"
+                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block py-5"
                 key={element.id}
               >
                 <Accordion title={element.title}>{element.content}</Accordion>
@@ -483,7 +485,7 @@ export default function Home() {
         <img src="/newsletter.png" />
       </div>
 
-      <div className="container mx-auto  px-5 lg:px-20">
+      <div className="container mx-auto  px-5 lg:px-20 mt-10">
         <Footer />
       </div>
     </div>
