@@ -4,21 +4,23 @@ import Header from "../components/Header";
 
 export default function Contact() {
   return (
-    <div>
+    <div className="bg-[#90a8fe0d]">
       <Head>
         <title>Contact Us - King's Chart</title>
       </Head>
-
+      
+      <div className="bg-white">
       <div className="container mx-auto px-5 lg:px-20">
         <Header />
       </div>
-      <div className="container mx-auto px-5 lg:px-20 bg-[#90a8fe0d]">
+      </div>
+      <div className="container mx-auto px-5 lg:px-20">
         <div className="pt-20">
           <h1 className="text-5xl font-bold">Contact Us</h1>
         </div>
         <div className="flex justify-between pt-20 flex-col md:flex-row">          
           <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  bg-white  rounded-lg">
+            <div className="flex items-center justify-center w-full h-56  bg-white shadow-lg rounded-lg">
               <div>
                 <img className="m-auto" src="Group 591.png"/>
                 <div className="text-center my-2">123 45 east road</div>
@@ -27,7 +29,7 @@ export default function Contact() {
             </div>
           </div>          
           <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  bg-white  rounded-lg">
+            <div className="flex items-center justify-center w-full h-56  bg-white  shadow-lg  rounded-lg">
               <div>
                 <img className="m-auto" src="Group 592.png"/>
                 <div className="text-center my-2">+91 123456 78989</div>
@@ -36,7 +38,7 @@ export default function Contact() {
             </div>
           </div>                   
           <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  bg-white  rounded-lg">
+            <div className="flex items-center justify-center w-full h-56  shadow-lg  bg-white  rounded-lg">
               <div>
                 <img className="m-auto" src="Group 593.png"/>
                 <div className="text-center my-2">contact@kingchart.com</div>
@@ -48,16 +50,16 @@ export default function Contact() {
           <div className="flex justify-center items-center w-full md:w-1/2 p-2.5">
             <img className="md:pr-10  rounded-lg" src="map.png"/>
           </div>
-          <div className="flex justify-center items-center bg-white w-full md:w-1/2 rounded-lg p-2.5">
-            <form className="w-10/12 h-auto" action="">
+          <div className="flex justify-center items-center bg-white w-full md:w-1/2 rounded-lg p-2.5  shadow-lg">
+            <form className="w-10/12 h-auto " action="">
               <div className="my-5">
-                <input name="name" className="border rounded-lg bg-[#90a8fe0d] w-full h-16" type="email" required placeholder="Enter your name*"/>
+                <input name="name" className="border rounded-lg bg-[#90a8fe0d] w-full p-3" type="email" required placeholder="Enter your name*"/>
               </div>
               <div className="my-5">
-                <input name="email" className="border rounded-lg bg-[#90a8fe0d] w-full h-16" type="text" required placeholder="Enter your email address*"/>
+                <input name="email" className="border rounded-lg bg-[#90a8fe0d] w-full  p-3" type="text" required placeholder="Enter your email address*"/>
               </div>
               <div className="my-5">
-                <textarea name="massge" className="border rounded-lg bg-[#90a8fe0d] w-full h-40" required placeholder="Enter your message"/>
+                <textarea name="massge" className="border rounded-lg bg-[#90a8fe0d] w-full  p-3 h-40" required placeholder="Enter your message"/>
               </div>
               <button
                 className="block p-2 my-5 hover:bg-[#00FC5C] bg-[#FD4C5C] text-white"

@@ -47,6 +47,7 @@ export default function Home() {
         })
         .catch(function (error) {
           setSent(false);
+          console.log(error)
         });
     }
   }
@@ -124,8 +125,9 @@ export default function Home() {
                   placeholder="Enter your email address"
                 />
                 <button
-                  className="bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm hover:bg-black"
+                  className={`bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm ${sent ? "opacity-50" : "hover:bg-black"}`}
                   type="submit"
+                  disabled={sent}
                 >
                   {clicked == true ? (
                     sent == true ? (
@@ -178,7 +180,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white shadow-lg px-5 text-center py-8 lg:mt-10 lg:-mb-10">
+          <div className="bg-white shadow-lg px-5 text-center py-8 lg:mt-20 lg:-mb-20">
             <img className="inline-block" src="/micicon.svg" />
             <h4 className="font-bold text-xl mt-5">Online Courses</h4>
             <p className="px-3 opacity-60 mt-3">
@@ -198,9 +200,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-10 lg:-mb-10">
+          <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-20 lg:-mb-20">
             <img className="inline-block" src="/discordicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Online Courses</h4>
+            <h4 className="font-bold text-xl mt-5">Discord Community</h4>
             <p className="px-3 opacity-60 mt-3">
               We are Spreading Awareness through our free Youtube educational
               content and free telegram channel.
@@ -217,7 +219,7 @@ export default function Home() {
               content and free telegram channel.
             </p>
           </div>
-
+{/* 
           <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-10 lg:-mb-10">
             <img className="inline-block" src="/phoneicon.svg" />
             <h4 className="font-bold text-xl mt-5">Online Courses</h4>
@@ -225,7 +227,7 @@ export default function Home() {
               We are Spreading Awareness through our free Youtube educational
               content and free telegram channel.
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="px-5 my-10 lg:p-10 lg:w-1/2">

@@ -5,6 +5,8 @@ import {
   faFacebookSquare,
   faInstagram,
   faLinkedinIn,
+  faTelegram,
+  faTelegramPlane,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -30,11 +32,9 @@ const Footer = () => (
             </Link>
           </li>
           <li className="w-4 mx-3 inline-block">
-            <Link href="/">
-              <a className="hover:text-[#FD4C5C]">
-                <FontAwesomeIcon icon={faLinkedinIn} />
+              <a  href="https://t.me/Kingchart" target="_blank"  className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon icon={faTelegramPlane} />
               </a>
-            </Link>
           </li>
 
           <li className="w-4 mx-3 inline-block">
@@ -90,7 +90,7 @@ const Footer = () => (
           <li className="font-bold mb-3">Quick Links</li>
 
           <li>
-            <Link href="/">
+            <Link href="/auth/signup">
               <a>Registration</a>
             </Link>
           </li>
@@ -129,16 +129,16 @@ const Footer = () => (
         </ul>
 
         <div className="mt-10">
-          <Link href="/">
+          <Link href="/auth/signup">
             <a className="transition-colors mr-1 px-5 py-2 bg-[#FD4C5C] text-white hover:bg-black rounded-sm">
               Register
             </a>
           </Link>
-          <Link href="/">
-            <a className="transition-colors ml-1 px-5 py-2 hover:bg-[#FD4C5C] text-white bg-black rounded-sm">
+          
+            <a href="https://t.me/Kingchart" target="_blank"  className="transition-colors ml-1 px-5 py-2 hover:bg-[#FD4C5C] text-white bg-black rounded-sm">
               Telegram
             </a>
-          </Link>
+
         </div>
       </div>
     </div>

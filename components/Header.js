@@ -6,7 +6,7 @@ const Header = () => {
   const [isActive, setActive] = useState(false);
   return (
     <>
-      <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
+      <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center w-full lg:px-20 px-5">
         <div className="w-1/4">
           <Link href="/">
             <a className="cursor-pointer">
@@ -20,7 +20,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div onClick={() => setActive(true)} className="cursor-pointer">
+        <div onClick={() => {setActive(true); console.log("working")}} className="cursor-pointer">
           <svg viewBox="0 0 100 80" width="30" height="30">
             <rect width="100" height="10"></rect>
             <rect y="30" width="100" height="10"></rect>
@@ -42,7 +42,7 @@ const Header = () => {
         </li>
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/courses">
-            <a>Cources</a>
+            <a>Courses</a>
           </Link>
         </li>
 
@@ -86,7 +86,7 @@ const Header = () => {
           <ul>
             <li className="inline-block mx-4 font-bold">
               <Link href="/courses">
-                <a>Cources</a>
+                <a>Courses</a>
               </Link>
             </li>
 
