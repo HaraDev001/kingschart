@@ -20,7 +20,11 @@ export default function Services() {
       </div>
       <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
         <div className="w-full lg:w-1/2 md:mt-20 grid lg:grid-cols-2 p-5 gap-4 justify-items-center">
-          <div className="bg-white shadow-lg px-5 text-center py-20 flex items-center justify-center flex-col">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            className="bg-white shadow-lg cursor-pointer px-5 text-center py-20 flex items-center justify-center flex-col"
+          >
             <img className="inline-block" src="/robot-icon.svg" />
             <h4 className="font-bold text-xl mt-5">
               Free Crypto Awareness Touchpoints
@@ -32,20 +36,13 @@ export default function Services() {
               consume content covering everything from fundamentals of crypto to
               latest industry trends.
             </p>
-          </div>
+          </a>
 
-          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col lg:mt-20 lg:-mb-20">
-            <img className="inline-block" src="/micicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Online MasterClass</h4>
-            <p className="px-3 opacity-60 mt-3">
-              With our trading course covering technical crypto analysis and the
-              Elliott Wave Trading Theory, we offer our users a sure shot way to
-              crack the crypto market and multiply their wealth. Register now to
-              start your L(earn)ing journey today!
-            </p>
-          </div>
-
-          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col">
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col  lg:mt-20 lg:-mb-20"
+          >
             <img className="inline-block" src="/telegramicon.svg" />
             <h4 className="font-bold text-xl mt-5">Telegram Community</h4>
             <p className="px-3 opacity-60 mt-3">
@@ -54,7 +51,22 @@ export default function Services() {
               with the multiple telegram groups we host. Join one of the largest
               crypto trading communities and become a part of the revolution.
             </p>
-          </div>
+          </a>
+
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
+          >
+            <img className="inline-block" src="/micicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Online MasterClass</h4>
+            <p className="px-3 opacity-60 mt-3">
+              With our trading course covering technical crypto analysis and the
+              Elliott Wave Trading Theory, we offer our users a sure shot way to
+              crack the crypto market and multiply their wealth. Register now to
+              start your L(earn)ing journey today!
+            </p>
+          </a>
 
           <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col lg:mt-20 lg:-mb-20">
             <img className="inline-block" src="/discordicon.svg" />

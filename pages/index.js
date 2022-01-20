@@ -169,6 +169,121 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
+        <div className="w-full lg:w-1/2 md:mt-20 grid lg:grid-cols-2 p-5 gap-4 justify-items-center">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            className="bg-white shadow-lg cursor-pointer px-5 text-center py-20 flex items-center justify-center flex-col"
+          >
+            <img className="inline-block" src="/robot-icon.svg" />
+            <h4 className="font-bold text-xl mt-5">
+              Free Crypto Awareness Touchpoints
+            </h4>
+            <p className="px-3 opacity-60 mt-3">
+              We strive to educate people on all things crypto as awareness is
+              the first step to success. Tune in to our You tube, Instagram,
+              twitter and Spotify channels and get access to free, easy to
+              consume content covering everything from fundamentals of crypto to
+              latest industry trends.
+            </p>
+          </a>
+
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col  lg:mt-20 lg:-mb-20"
+          >
+            <img className="inline-block" src="/telegramicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Telegram Community</h4>
+            <p className="px-3 opacity-60 mt-3">
+              We bring together thousands of like-minded people as we endeavour
+              to build a well-informed community of next-generation investors
+              with the multiple telegram groups we host. Join one of the largest
+              crypto trading communities and become a part of the revolution.
+            </p>
+          </a>
+
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
+          >
+            <img className="inline-block" src="/micicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Online MasterClass</h4>
+            <p className="px-3 opacity-60 mt-3">
+              With our trading course covering technical crypto analysis and the
+              Elliott Wave Trading Theory, we offer our users a sure shot way to
+              crack the crypto market and multiply their wealth. Register now to
+              start your L(earn)ing journey today!
+            </p>
+          </a>
+
+          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col lg:mt-20 lg:-mb-20">
+            <img className="inline-block" src="/discordicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Discord Community</h4>
+            <p className="px-3 opacity-60 mt-3">
+              Coming soon- An Integrated and detailed discord community to
+              promote peer-peer learning and data sharing
+            </p>
+          </div>
+
+          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col">
+            <img className="inline-block" src="/phoneicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
+            <p className="px-3 opacity-60 mt-3">
+              Catch us on spotify with our upcoming inhouse podcast which will
+              serve as an amateur’s guide to discovering the vast world of
+              crypto. From getting acquainted with the fundamentals of
+              cryptoverse, to staying on top of industry updates, to hearing
+              from eminent members of the crypto community, this podcast exists
+              to get you all set for the future.
+            </p>
+          </div>
+          {/* 
+          <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-10 lg:-mb-10">
+            <img className="inline-block" src="/phoneicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Online Courses</h4>
+            <p className="px-3 opacity-60 mt-3">
+              We are Spreading Awareness through our free Youtube educational
+              content and free telegram channel.
+            </p>
+          </div> */}
+        </div>
+
+        <div className="px-5 my-10 lg:p-10 lg:w-1/2">
+          <h2 className="text-2xl font-black">
+            Why learn to trade with King’sChart?
+          </h2>
+          <p className="opacity-70 mt-5">
+            We are experienced in determining the personality of your brand and
+            delivering a coher. We are experienced in determining the
+            personality of your brand and delivering a coher
+          </p>
+
+          <p className="opacity-70 mt-5">
+            If you have been wanting to take your chart analysis to the next
+            level, this website is the ideal place to start. It is expected that
+            you already have some basic understanding of support and resistance
+            and basic trading.
+          </p>
+
+          <p className="opacity-70  mt-5">
+            This course is not for you if you are a skeptic of technical
+            analysis. It is not for you if you prefer to stare at business
+            fundamentals and create an estimated value of a stock.
+          </p>
+
+          <div className="mt-10 ">
+            <Link href="">
+              <a className="px-6 py-4 bg-[#FD4C5C] text-white rounded-lg hover:bg-black">
+                Get Started
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* About */}
       <div className="h-screen flex items-center lg:justify-between lg:px-20 flex-col lg:flex-row  my-20 lg:my-5">
         <div className="lg:w-1/3 p-5 lg:my-10 lg:pr-20">
