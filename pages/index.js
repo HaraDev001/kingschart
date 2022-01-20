@@ -47,7 +47,7 @@ export default function Home() {
         })
         .catch(function (error) {
           setSent(false);
-          console.log(error)
+          console.log(error);
         });
     }
   }
@@ -103,10 +103,10 @@ export default function Home() {
           <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>
               <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto capitalize">
-                Start your l(earn)ing journey today
+                Start your L(earn)ing journey today
               </h1>
               <p className="my-5">
-                Yes, you needonly 60 mins to get started with trading and it
+                Yes, you need only 60 mins to get started with trading and it
                 doesn't matter what level you are at.
               </p>
 
@@ -125,7 +125,9 @@ export default function Home() {
                   placeholder="Enter your email address"
                 />
                 <button
-                  className={`bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm ${sent ? "opacity-50" : "hover:bg-black"}`}
+                  className={`bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm ${
+                    sent ? "opacity-50" : "hover:bg-black"
+                  }`}
                   type="submit"
                   disabled={sent}
                 >
@@ -166,8 +168,6 @@ export default function Home() {
           SUCCEED
         </div>
       </div>
-
-
 
       {/* About */}
       <div className="h-screen flex items-center lg:justify-between lg:px-20 flex-col lg:flex-row  my-20 lg:my-5">
@@ -227,7 +227,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
 
       <div className="mt-40 px-5 lg:px-20">
         <h2 className="text-5xl font-bold">Crypto alerts and news</h2>
@@ -294,7 +293,6 @@ export default function Home() {
         </Swiper>
       </div>
 
-      
       <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
         <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
           <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
@@ -414,7 +412,7 @@ export default function Home() {
             {[
               {
                 id: 0,
-                title: "How is a egg fried?",
+                title: "What are Crypto signals?",
                 content: "Throw an egg in hot oil",
               },
               {
@@ -454,7 +452,7 @@ export default function Home() {
               },
             ].map((element) => (
               <div
-                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block py-5"
+                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block gap-5 py-5"
                 key={element.id}
               >
                 <Accordion title={element.title}>{element.content}</Accordion>

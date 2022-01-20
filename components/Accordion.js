@@ -9,7 +9,7 @@ export default function Accordion(props) {
     <div className="bg-white m-2">
       <div
         onClick={() => setLid(!lid)}
-        className="flex w-full border border-gray-700 py-2 px-4 rounded-md justify-between items-center  cursor-pointer"
+        className="flex w-full border border-gray-700 py-3 px-4 rounded-md justify-between items-center  cursor-pointer"
       >
         <h1 className=" text-gray-700">{props.title}</h1>
         <span>

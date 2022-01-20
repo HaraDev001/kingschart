@@ -17,7 +17,7 @@ const Footer = () => (
         <h6 className="text-lg italic">
           KING'S<span className="font-bold">CHART</span>
         </h6>
-        <p className="mt-5">
+        <p className="mt-5 opacity-60">
           There are many variations of passages of Lorem the Ipsum available but
           it is the majority of suffered that a alteration in that some dummy
           text.
@@ -32,9 +32,13 @@ const Footer = () => (
             </Link>
           </li>
           <li className="w-4 mx-3 inline-block">
-              <a  href="https://t.me/Kingchart" target="_blank"  className="hover:text-[#FD4C5C]">
-                <FontAwesomeIcon icon={faTelegramPlane} />
-              </a>
+            <a
+              href="https://t.me/Kingchart"
+              target="_blank"
+              className="hover:text-[#FD4C5C]"
+            >
+              <FontAwesomeIcon icon={faTelegramPlane} />
+            </a>
           </li>
 
           <li className="w-4 mx-3 inline-block">
@@ -46,11 +50,13 @@ const Footer = () => (
           </li>
 
           <li className="w-4 ml-3 inline-block">
-            <Link href="/">
-              <a className="hover:text-[#FD4C5C]">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </Link>
+            <a
+              href="https://twitter.com/FaizFalak3"
+              target="_blank"
+              className="hover:text-[#FD4C5C]"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
           </li>
         </ul>
       </div>
@@ -59,25 +65,25 @@ const Footer = () => (
         <ul>
           <li className="font-bold mb-3">Education</li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Kings Academy</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Webinars</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>E-learning</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Crypto</a>
             </Link>
@@ -89,25 +95,25 @@ const Footer = () => (
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Quick Links</li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/auth/signup">
               <a>Registration</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Make saving Reviews</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Blogs</a>
             </Link>
           </li>
 
-          <li>
+          <li className="opacity-80">
             <Link href="/">
               <a>Contact us</a>
             </Link>
@@ -119,11 +125,11 @@ const Footer = () => (
         <ul className="text-[#000B33]">
           <li className="font-bold mb-3">Our Support Download</li>
 
-          <li>456789123</li>
+          <li className="opacity-80">456789123</li>
 
-          <li>Mumbai, India</li>
+          <li className="opacity-80">Mumbai, India</li>
 
-          <li>
+          <li className="opacity-80">
             <a href="mailto:Info@kingschart.com ">Info@kingschart.com </a>
           </li>
         </ul>
@@ -134,11 +140,14 @@ const Footer = () => (
               Register
             </a>
           </Link>
-          
-            <a href="https://t.me/Kingchart" target="_blank"  className="transition-colors ml-1 px-5 py-2 hover:bg-[#FD4C5C] text-white bg-black rounded-sm">
-              Telegram
-            </a>
 
+          <a
+            href="https://t.me/Kingchart"
+            target="_blank"
+            className="transition-colors ml-1 px-5 py-2 hover:bg-[#FD4C5C] text-white bg-black rounded-sm"
+          >
+            Telegram
+          </a>
         </div>
       </div>
     </div>

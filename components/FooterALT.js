@@ -22,7 +22,11 @@ const FooterAlt = () => (
       </li>
 
       <li className="inline-block mx-4">
-        <a href="https://t.me/Kingchart" target="_blank" className="text-black hover:text-[#FD4C5C] cursor-pointer">
+        <a
+          href="https://t.me/Kingchart"
+          target="_blank"
+          className="text-black hover:text-[#FD4C5C] cursor-pointer"
+        >
           <FontAwesomeIcon height="30" icon={faTelegramPlane} />
         </a>
       </li>
@@ -34,7 +38,11 @@ const FooterAlt = () => (
       </li>
 
       <li className="inline-block mx-4">
-        <a className="text-black hover:text-[#FD4C5C] cursor-pointer">
+        <a
+          href="https://twitter.com/FaizFalak3"
+          target="_blank"
+          className="text-black hover:text-[#FD4C5C] cursor-pointer"
+        >
           <FontAwesomeIcon height="30" icon={faTwitter} />
         </a>
       </li>

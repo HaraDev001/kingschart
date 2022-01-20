@@ -40,11 +40,7 @@ const Header = () => {
         >
           &times;
         </li>
-        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/courses">
-            <a>Courses</a>
-          </Link>
-        </li>
+
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/services">
@@ -52,11 +48,6 @@ const Header = () => {
           </Link>
         </li>
 
-        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/pricing">
-            <a>Pricing</a>
-          </Link>
-        </li>
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/blogs">
@@ -84,21 +75,10 @@ const Header = () => {
         </div>
         <div className="hidden lg:block w-2/4 text-center">
           <ul>
-            <li className="inline-block mx-4 font-bold">
-              <Link href="/courses">
-                <a>Courses</a>
-              </Link>
-            </li>
 
             <li className="inline-block mx-4 font-bold">
               <Link href="/services">
                 <a>Our Services</a>
-              </Link>
-            </li>
-
-            <li className="inline-block mx-4 font-bold">
-              <Link href="/pricing">
-                <a>Pricing</a>
               </Link>
             </li>
 
