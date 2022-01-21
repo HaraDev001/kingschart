@@ -108,7 +108,7 @@ export default function Courses() {
               </Link>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 flex justify-end items-end relative">
+          {/* <div className="w-full lg:w-1/2 flex justify-end items-end relative">
             <div className="bg-[#2b59ff44] absolute top-0 left-0 w-full h-full z-50 flex justify-center items-center cursor-pointer">
               <img src="/play.svg" />
             </div>
@@ -116,6 +116,13 @@ export default function Courses() {
               className="w-full"
               src="https://source.unsplash.com/random/900x900"
             />
+          </div> */}
+
+          <div className="w-full lg:w-1/2 flex justify-end items-center relative">
+            <video className="w-full h-auto" controls>
+              <source src="/video.mp4" type="video/mp4" />
+              Update to a more recent brower
+            </video>
           </div>
         </div>
       </div>
