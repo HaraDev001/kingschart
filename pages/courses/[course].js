@@ -119,7 +119,12 @@ export default function Courses() {
           </div> */}
 
           <div className="w-full lg:w-1/2 flex justify-end items-center relative">
-            <video className="w-full h-auto" controls>
+            <video
+              onContextMenu={(e) => e.preventDefault()}
+              controlsList="nodownload"
+              className=" select-none w-full h-auto"
+              controls
+            >
               <source src="/video.mp4" type="video/mp4" />
               Update to a more recent brower
             </video>
