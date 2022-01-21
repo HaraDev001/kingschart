@@ -25,7 +25,7 @@ import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
 
-export default function Home() {
+export default function Home({ FAQ }) {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
   const [clicked, setclicked] = useState(false);
@@ -523,54 +523,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex w-full flex-wrap">
-            {[
-              {
-                id: 0,
-                title: "What are Crypto signals?",
-                content: "Throw an egg in hot oil",
-              },
-              {
-                id: 1,
-                title: "How to make crisp?",
-                content: "Just do it",
-              },
-              {
-                id: 2,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-              {
-                id: 3,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-              {
-                id: 4,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-              {
-                id: 5,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-              {
-                id: 6,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-              {
-                id: 7,
-                title: "How to ride a bike?",
-                content: "Paddling keeps you alive.",
-              },
-            ].map((element) => (
+          <div className="flex w-full flex-wrap  items-stretch">
+            {FAQ.data.map((element) => (
               <div
-                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block gap-5 py-5"
+                className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 block gap-5 py-5"
                 key={element.id}
               >
-                <Accordion title={element.title}>{element.content}</Accordion>
+                <Accordion title={element.attributes.Question}>
+                  {element.attributes.Answer}
+                </Accordion>
               </div>
             ))}
           </div>
@@ -603,4 +564,15 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const faqResponse = await fetch(`${settings.APIURL}/faqs`);
+  const faqData = await faqResponse.json();
+
+  return {
+    props: {
+      FAQ: faqData,
+    },
+  };
 }
