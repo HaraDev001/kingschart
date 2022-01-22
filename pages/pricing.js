@@ -192,7 +192,6 @@ export default function Pricing() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="container lg:px-20 px-5 mx-auto">
@@ -217,7 +216,6 @@ export default function Pricing() {
           <img src="/newsletter.png" />
         </div>
 
-        
         <FooterALT />
       </div>
     </div>

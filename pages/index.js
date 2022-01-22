@@ -110,36 +110,30 @@ export default function Home({ FAQ }) {
                 doesn't matter what level you are at.
               </p>
 
-              <form
-                onSubmit={subscribe}
-                className={`flex bg-white shadow-lg lg:items-center lg:justify-between rounded-lg lg:px-4 ${
-                  clicked === true &&
-                  (email.length == 0 ? "border border-red-500" : "")
-                }`}
-              >
-                <input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 p-3 rounded-lg"
-                  type="email"
-                  placeholder="Enter your email address"
-                />
+              <form onSubmit={subscribe} className="rounded-lg">
+                <div className="bg-white p-3 mb-5 rounded-lg">
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className=" w-full p-3 rounded-lg block border-b"
+                    type="email"
+                    placeholder="Telegram ID*"
+                  />
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className=" w-full p-3 rounded-lg block border-b"
+                    type="email"
+                    placeholder="Email Address*"
+                  />
+                </div>
+
                 <button
-                  className={`bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm ${
-                    sent ? "opacity-50" : "hover:bg-black"
-                  }`}
+                  className={`bg-[#FD4C5C] text-white px-3 py-4 rounded-lg text-sm w-full`}
                   type="submit"
                   disabled={sent}
                 >
-                  {clicked == true ? (
-                    sent == true ? (
-                      <FontAwesomeIcon icon={faCheck} width="15" />
-                    ) : (
-                      "Try Again"
-                    )
-                  ) : (
-                    "I'm Ready to Learn"
-                  )}
+                  I'm Ready to L(earn)
                 </button>
               </form>
             </div>
@@ -169,10 +163,13 @@ export default function Home({ FAQ }) {
         </div>
       </div>
 
+      <div className="container mx-auto px-5 lg:px-20">
+        <h1 className="text-4xl font-bold mt-10">Our Services</h1>
+      </div>
       <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
-        <div className="w-full lg:w-1/2 md:mt-20 grid lg:grid-cols-2 p-5 gap-4 justify-items-center">
+        <div className="md:mt-20 grid lg:grid-cols-2 p-5 gap-5 xl:gap-20 justify-items-center">
           <a
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/c/KingChart007"
             target="_blank"
             className="bg-white shadow-lg cursor-pointer px-5 text-center py-20 flex items-center justify-center flex-col"
           >
@@ -190,9 +187,8 @@ export default function Home({ FAQ }) {
           </a>
 
           <a
-            href="https://t.me/Kingchart"
-            target="_blank"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col  lg:mt-20 lg:-mb-20"
+            href="/services?price=premium"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
           >
             <img className="inline-block" src="/telegramicon.svg" />
             <h4 className="font-bold text-xl mt-5">Telegram Community</h4>
@@ -205,8 +201,7 @@ export default function Home({ FAQ }) {
           </a>
 
           <a
-            href="https://t.me/Kingchart"
-            target="_blank"
+            href="/services?price=master"
             className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
           >
             <img className="inline-block" src="/micicon.svg" />
@@ -219,16 +214,20 @@ export default function Home({ FAQ }) {
             </p>
           </a>
 
-          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col lg:mt-20 lg:-mb-20">
+          <a className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col">
             <img className="inline-block" src="/discordicon.svg" />
             <h4 className="font-bold text-xl mt-5">Discord Community</h4>
             <p className="px-3 opacity-60 mt-3">
               Coming soon- An Integrated and detailed discord community to
               promote peer-peer learning and data sharing
             </p>
-          </div>
+          </a>
 
-          <div className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col">
+          <a
+            href="https://open.spotify.com/show/1KiPAtxH1I3zCNXpV3J8ia?si=bc7e4c32056f4606"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
+          >
             <img className="inline-block" src="/phoneicon.svg" />
             <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
             <p className="px-3 opacity-60 mt-3">
@@ -239,7 +238,24 @@ export default function Home({ FAQ }) {
               from eminent members of the crypto community, this podcast exists
               to get you all set for the future.
             </p>
-          </div>
+          </a>
+
+          <a
+            href="https://open.spotify.com/show/1KiPAtxH1I3zCNXpV3J8ia?si=bc7e4c32056f4606"
+            target="_blank"
+            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
+          >
+            <img className="inline-block" src="/phoneicon.svg" />
+            <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
+            <p className="px-3 opacity-60 mt-3">
+              Catch us on spotify with our upcoming inhouse podcast which will
+              serve as an amateur’s guide to discovering the vast world of
+              crypto. From getting acquainted with the fundamentals of
+              cryptoverse, to staying on top of industry updates, to hearing
+              from eminent members of the crypto community, this podcast exists
+              to get you all set for the future.
+            </p>
+          </a>
           {/* 
           <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-10 lg:-mb-10">
             <img className="inline-block" src="/phoneicon.svg" />
@@ -249,38 +265,6 @@ export default function Home({ FAQ }) {
               content and free telegram channel.
             </p>
           </div> */}
-        </div>
-
-        <div className="px-5 my-10 lg:p-10 lg:w-1/2">
-          <h2 className="text-2xl font-black">
-            Why learn to trade with King’sChart?
-          </h2>
-          <p className="opacity-70 mt-5">
-            We are experienced in determining the personality of your brand and
-            delivering a coher. We are experienced in determining the
-            personality of your brand and delivering a coher
-          </p>
-
-          <p className="opacity-70 mt-5">
-            If you have been wanting to take your chart analysis to the next
-            level, this website is the ideal place to start. It is expected that
-            you already have some basic understanding of support and resistance
-            and basic trading.
-          </p>
-
-          <p className="opacity-70  mt-5">
-            This course is not for you if you are a skeptic of technical
-            analysis. It is not for you if you prefer to stare at business
-            fundamentals and create an estimated value of a stock.
-          </p>
-
-          <div className="mt-10 ">
-            <Link href="">
-              <a className="px-6 py-4 bg-[#FD4C5C] text-white rounded-lg hover:bg-black">
-                Get Started
-              </a>
-            </Link>
-          </div>
         </div>
       </div>
 

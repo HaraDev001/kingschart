@@ -12,10 +12,19 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter, withRouter } from "next/router";
 import FooterAlt from "../../components/FooterALT";
 import HeaderALT from "../../components/HeaderALT";
 
-export default function Courses() {
+export default function Courses({ href }) {
+  const router = useRouter();
+
+  function preventDownload(event) {
+    console.log("die");
+    if (event.which === 3 || event.button === 2) {
+      console.log("die");
+    }
+  }
   return (
     <div>
       <Head>
@@ -44,7 +53,7 @@ export default function Courses() {
             <div className="flex items-center text-white">
               <ul className="flex items-center">
                 {[1, 2, 3, 4, 5].map((element) => (
-                  <li className="text-yellow-500 mr-4">
+                  <li key={element} className="text-yellow-500 mr-4">
                     <FontAwesomeIcon width="20" icon={faStar} />
                   </li>
                 ))}
@@ -121,6 +130,7 @@ export default function Courses() {
           <div className="w-full lg:w-1/2 flex justify-end items-center relative">
             <video
               onContextMenu={(e) => e.preventDefault()}
+              onClick={preventDownload}
               controlsList="nodownload"
               className=" select-none w-full h-auto"
               controls
