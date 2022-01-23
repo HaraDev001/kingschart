@@ -11,6 +11,7 @@ export default function Contact() {
   const [message, setMessage] = useState({
     name: "",
     email: "",
+    telegram: "",
     message: "",
   });
 
@@ -24,16 +25,17 @@ export default function Contact() {
         data: {
           Name: message.name,
           From: message.email,
-          Message: message.message
+          telegram: message.telegram,
+          Message: message.message,
         },
       })
       .then(function (response) {
-        alert("Thanks. We'll get in touch soon.")
-        router.push('/contact')
+        alert("Thanks. We'll get in touch soon.");
+        router.push("/contact");
       })
       .catch(function (error) {
-        alert("Try Again Later.")
-    });
+        alert("Try Again Later.");
+      });
   }
   // /api/messages
   return (
@@ -51,37 +53,13 @@ export default function Contact() {
         <div className="pt-20">
           <h1 className="text-5xl font-bold">Contact Us</h1>
         </div>
-        <div className="flex justify-between pt-20 flex-col md:flex-row">
-          <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  bg-white shadow-lg rounded-lg">
-              <div>
-                <img className="m-auto" src="Group 591.png" />
-                <div className="text-center my-2">123 45 east road</div>
-                <div className="text-center">Bengaluru</div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  bg-white  shadow-lg  rounded-lg">
-              <div>
-                <img className="m-auto" src="Group 592.png" />
-                <div className="text-center my-2">+91 123456 78989</div>
-                <div className="text-center">+90 653456 78989</div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full p-2.5 md:w-1/3">
-            <div className="flex items-center justify-center w-full h-56  shadow-lg  bg-white  rounded-lg">
-              <div>
-                <img className="m-auto" src="Group 593.png" />
-                <div className="text-center my-2">contact@kingchart.com</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div className="flex justify-center  flex-col md:flex-row pt-20 pb-32">
           <div className="flex justify-center items-center w-full md:w-1/2 p-2.5">
-            <img className="md:pr-10  rounded-lg" src="map.png" />
+            <img
+              className="md:pr-10  rounded-lg"
+              src="https://images.unsplash.com/photo-1508780709619-79562169bc64?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8d29ya3x8fHx8fDE2NDI5Mzg4ODk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=500"
+            />
           </div>
           <div className="flex justify-center items-center bg-white w-full md:w-1/2 rounded-lg p-2.5  shadow-lg">
             <form method="post" onSubmit={send} className="w-10/12 h-auto ">
@@ -92,6 +70,7 @@ export default function Contact() {
                     setMessage({
                       name: e.target.value,
                       email: message.email,
+                      telegram: e.target.value,
                       message: message.message,
                     })
                   }
@@ -109,6 +88,7 @@ export default function Contact() {
                     setMessage({
                       name: message.name,
                       email: e.target.value,
+                      telegram: message.telegram,
                       message: message.message,
                     })
                   }
@@ -119,6 +99,27 @@ export default function Contact() {
                   placeholder="Enter your email address*"
                 />
               </div>
+
+              <div className="my-5">
+                <input
+                  value={message.telegram}
+                  onChange={(e) =>
+                    setMessage({
+                      name: message.name,
+                      email: message.email,
+                      telegram: e.target.value,
+                      message: message.message,
+                    })
+                  }
+                  name="telegram"
+                  className="border rounded-lg bg-[#90a8fe0d] w-full  p-3"
+                  type="text"
+                  pattern=".*\B@(?=\w{5,64}\b)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)*.*"
+                  required
+                  placeholder="Enter your Telegram Id*"
+                />
+              </div>
+
               <div className="my-5">
                 <textarea
                   value={message.message}
@@ -126,6 +127,7 @@ export default function Contact() {
                     setMessage({
                       name: message.name,
                       email: message.email,
+                      telegram: message.telegram,
                       message: e.target.value,
                     })
                   }
@@ -135,6 +137,7 @@ export default function Contact() {
                   placeholder="Enter your message"
                 />
               </div>
+
               <button
                 className="block p-2 my-5 hover:bg-black bg-[#FD4C5C] text-white"
                 type="submit"

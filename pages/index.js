@@ -240,20 +240,11 @@ export default function Home({ FAQ }) {
             </p>
           </a>
 
-          <a
-            href="https://open.spotify.com/show/1KiPAtxH1I3zCNXpV3J8ia?si=bc7e4c32056f4606"
-            target="_blank"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/phoneicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
+          <a className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col w-full">
+            <img className="inline-block" src="/shirticon.svg" />
+            <h4 className="font-bold text-xl mt-5">Merchandise</h4>
             <p className="px-3 opacity-60 mt-3">
-              Catch us on spotify with our upcoming inhouse podcast which will
-              serve as an amateur’s guide to discovering the vast world of
-              crypto. From getting acquainted with the fundamentals of
-              cryptoverse, to staying on top of industry updates, to hearing
-              from eminent members of the crypto community, this podcast exists
-              to get you all set for the future.
+              Journal and starter kit coming soon
             </p>
           </a>
           {/* 

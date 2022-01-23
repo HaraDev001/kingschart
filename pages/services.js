@@ -81,7 +81,7 @@ export default function Services() {
                 </li>
               </ul>
 
-              <div className="mt-20">
+              <div className="mt-10">
                 <Link href="/">
                   <a className="px-6 py-3 border-2 font-bold border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
                     Try Free
@@ -99,7 +99,7 @@ export default function Services() {
             <div className="shadow-lg p-10 bg-white">
               <small className="text-red-600 text-lg">MASTER CLASS</small>
               <h3 className="text-5xl font-bold mt-4">
-                <span className="text-sm">$</span>200
+                <span className="text-sm">$</span>199
               </h3>
               <small className="opacity-50">Lifetime</small>
 
@@ -158,7 +158,7 @@ export default function Services() {
                 </li>
               </ul>
 
-              <div className="mt-20">
+              <div className="mt-10">
                 <Link href="/">
                   <a className="px-6 py-3 border-2 font-bold border-red-500 hover:bg-white bg-red-500 hover:text-red-500 text-white">
                     Buy Now
@@ -175,10 +175,23 @@ export default function Services() {
           >
             <div className="shadow-lg p-10 bg-white">
               <small className="text-blue-600 block text-lg">PREMIUM</small>
-              <h3 className="text-4xl font-bold mt-4">
-                <span className="text-sm">$</span>200
+              <h3 className="text-5xl font-bold mt-4 flex items-center">
+                <div className="">
+                  <span className="text-sm">$</span>199
+                </div>
+                <div className="flex flex-col p-2 ml-3">
+                  <small
+                    style={{ fontSize: "0.2em" }}
+                    className="font-normal opacity-50"
+                  >
+                    Original Price
+                  </small>
+                  <span className="text-xl font-normal opacity-50 line-through">
+                    <span className="text-sm">$</span>400
+                  </span>
+                </div>
               </h3>
-              <small className="opacity-80">Per Month</small>
+              <small className="opacity-50">Per Month</small>
 
               <hr className="mt-20 mb-5" />
 
@@ -212,7 +225,7 @@ export default function Services() {
                 </li>
               </ul>
 
-              <div className="mt-20">
+              <div className="mt-10">
                 <Link href="/">
                   <a className="px-6 py-3 border-2 font-bold border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
                     Buy Now
@@ -300,20 +313,11 @@ export default function Services() {
             </p>
           </a>
 
-          <a
-            href="https://open.spotify.com/show/1KiPAtxH1I3zCNXpV3J8ia?si=bc7e4c32056f4606"
-            target="_blank"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/phoneicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
+          <a className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col w-full">
+            <img className="inline-block" src="/shirticon.svg" />
+            <h4 className="font-bold text-xl mt-5">Merchandise</h4>
             <p className="px-3 opacity-60 mt-3">
-              Catch us on spotify with our upcoming inhouse podcast which will
-              serve as an amateur’s guide to discovering the vast world of
-              crypto. From getting acquainted with the fundamentals of
-              cryptoverse, to staying on top of industry updates, to hearing
-              from eminent members of the crypto community, this podcast exists
-              to get you all set for the future.
+              Journal and starter kit coming soon
             </p>
           </a>
           {/* 
