@@ -168,7 +168,7 @@ export default function Home({ FAQ, blogs }) {
         <h1 className="text-4xl font-bold mt-10">Our Services</h1>
       </div>
       <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
-        <div className="md:mt-20 grid lg:grid-cols-2 p-5 gap-5 xl:gap-20 justify-items-center">
+        <div className="md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5 lg:gap-10 justify-items-center">
           <a
             href="https://www.youtube.com/c/KingChart007"
             target="_blank"
