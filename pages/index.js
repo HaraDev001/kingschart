@@ -279,7 +279,10 @@ export default function Home({ FAQ }) {
 
         <div className="lg:w-1/2 p-5">
           <div>
-            <img className="cursor-pointer" src="/aboutus-image.png" alt="" />
+            <video className="w-full h-auto bg-red-400" controls>
+              <source src="/aboutus.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <ul className="mt-5">
               <li className="w-4 mr-3 inline-block">
                 <a
