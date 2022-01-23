@@ -135,9 +135,9 @@ const Footer = () => (
         </ul>
 
         <div className="mt-10">
-          <Link href="/auth/signup">
+          <Link href="/auth/login">
             <a className="transition-colors mr-1 px-5 py-2 bg-[#FD4C5C] text-white hover:bg-black rounded-sm">
-              Register
+              Login
             </a>
           </Link>
 

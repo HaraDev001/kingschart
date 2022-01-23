@@ -24,8 +24,9 @@ import {
 import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
+import moment from "moment";
 
-export default function Home({ FAQ }) {
+export default function Home({ FAQ, blogs }) {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
   const [clicked, setclicked] = useState(false);
@@ -347,10 +348,13 @@ export default function Home({ FAQ }) {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {[1, 2, 3, 4, 5, 6].map((element) => (
-            <SwiperSlide className="py-10" key={element}>
+          {blogs.data.map((element) => (
+            <SwiperSlide className="py-10" key={element.id}>
               <div className="shadow-lg">
-                <img src="/blog-image.png" />
+                <img
+                  src={`${settings.ROOT}${element.attributes.Featured_Image.data[0].attributes.url}`}
+                />
+
                 <div className="p-5">
                   <span className="flex items-center text-[#377CFD]">
                     <FontAwesomeIcon
@@ -358,26 +362,42 @@ export default function Home({ FAQ }) {
                       icon={faCalendar}
                     />
 
-                    <small className="mx-2">{10 + element} May, 2021</small>
+                    <small className="mx-2">
+                      {moment(`${element.attributes.createdAt}`).calendar()}
+                    </small>
                   </span>
-                  <h4 className="my-5 font-bold">NFT Beginner to Pro</h4>
+                  <h4 className="my-5 font-bold">{element.attributes.Title}</h4>
                   <p className="text-sm opacity-80">
-                    It is almost impossible to read the news without coming
-                    across a lead story elections through fake social media
-                    accounts...
+                    {element.attributes.Summary}
                   </p>
 
                   <div className="mt-5">
-                    <Link href="/">
-                      <span className="flex text-[#FD4C5C] cursor-pointer">
-                        <a>Read more</a>
-                        <FontAwesomeIcon
-                          className="mx-5"
-                          width="10"
-                          icon={faArrowRight}
-                        />
-                      </span>
-                    </Link>
+                    {element.attributes.External_Link !== "" ? (
+                      <a
+                        target="_blank"
+                        href={element.attributes.External_Link}
+                      >
+                        <span className="flex text-[#FD4C5C] cursor-pointer">
+                          <a>Read more</a>
+                          <FontAwesomeIcon
+                            className="mx-5"
+                            width="10"
+                            icon={faArrowRight}
+                          />
+                        </span>
+                      </a>
+                    ) : (
+                      <Link href="/">
+                        <span className="flex text-[#FD4C5C] cursor-pointer">
+                          <a>Read more</a>
+                          <FontAwesomeIcon
+                            className="mx-5"
+                            width="10"
+                            icon={faArrowRight}
+                          />
+                        </span>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -548,9 +568,13 @@ export async function getServerSideProps(context) {
   const faqResponse = await fetch(`${settings.APIURL}/faqs`);
   const faqData = await faqResponse.json();
 
+  const blogsResponse = await fetch(`${settings.APIURL}/blogs?populate=*`);
+  const blogsData = await blogsResponse.json();
+
   return {
     props: {
       FAQ: faqData,
+      blogs: blogsData,
     },
   };
 }

@@ -20,7 +20,13 @@ const Header = () => {
           </Link>
         </div>
 
-        <div onClick={() => {setActive(true); console.log("working")}} className="cursor-pointer">
+        <div
+          onClick={() => {
+            setActive(true);
+            console.log("working");
+          }}
+          className="cursor-pointer"
+        >
           <svg viewBox="0 0 100 80" width="30" height="30">
             <rect width="100" height="10"></rect>
             <rect y="30" width="100" height="10"></rect>
@@ -41,13 +47,11 @@ const Header = () => {
           &times;
         </li>
 
-
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/services">
             <a>Our Services</a>
           </Link>
         </li>
-
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/blogs">
@@ -75,7 +79,6 @@ const Header = () => {
         </div>
         <div className="hidden lg:block w-2/4 text-center">
           <ul>
-
             <li className="inline-block mx-4 font-bold">
               <Link href="/services">
                 <a>Our Services</a>
@@ -99,11 +102,6 @@ const Header = () => {
         <div className="hidden lg:block w-1/4 text-right">
           <Link href="/auth/login">
             <a className="px-5">Login</a>
-          </Link>
-          <Link href="/auth/signup">
-            <a className="transition-colors mr-1 px-5 py-2 bg-[#FD4C5C] text-white hover:bg-black rounded-sm">
-              Sign Up
-            </a>
           </Link>
         </div>
       </nav>
