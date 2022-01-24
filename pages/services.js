@@ -16,13 +16,11 @@ export default function Services() {
     jwt: "",
   });
 
-  useEffect(() => {
-    if (localStorage) {
-      setUser({
-        jwt: localStorage.getItem("token"),
-      });
-    }
-  });
+  if (typeof window !== "undefined") {
+    setUser({
+      jwt: localStorage.getItem("token"),
+    });
+  }
 
   return (
     <div className="bg-[rgba(144,168,254,0.05)]">
