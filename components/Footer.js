@@ -14,22 +14,22 @@ const Footer = () => (
   <div>
     <div className="flex justify-between pt-20 flex-col lg:flex-row">
       <div className="lg:w-1/4 lg:pr-5">
-        <h6 className="text-lg italic">
+        <h6 className="text-lg italic mt-10">
           KING'S<span className="font-bold">CHART</span>
         </h6>
-        <p className="mt-5 opacity-60">
+        {/* <p className="mt-5 opacity-60">
           There are many variations of passages of Lorem the Ipsum available but
           it is the majority of suffered that a alteration in that some dummy
           text.
-        </p>
+        </p> */}
 
         <ul className="mt-5">
           <li className="w-4 mr-3 inline-block">
-            <Link href="/">
+            <a target="_blank" href="https://www.instagram.com/kingscharts/">
               <a className="hover:text-[#FD4C5C]">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
-            </Link>
+            </a>
           </li>
           <li className="w-4 mx-3 inline-block">
             <a
@@ -42,11 +42,14 @@ const Footer = () => (
           </li>
 
           <li className="w-4 mx-3 inline-block">
-            <Link href="/">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=100076961797256"
+            >
               <a className="hover:text-[#FD4C5C]">
                 <FontAwesomeIcon icon={faFacebookSquare} />
               </a>
-            </Link>
+            </a>
           </li>
 
           <li className="w-4 ml-3 inline-block">
@@ -66,26 +69,20 @@ const Footer = () => (
           <li className="font-bold mb-3">Education</li>
 
           <li className="opacity-80">
-            <Link href="/">
+            <Link href="/services?price=master">
+              <a>Online Masterclass/e-learning</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/blog">
+              <a>News &amp; Alerts</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/services">
               <a>Kings Academy</a>
-            </Link>
-          </li>
-
-          <li className="opacity-80">
-            <Link href="/">
-              <a>Webinars</a>
-            </Link>
-          </li>
-
-          <li className="opacity-80">
-            <Link href="/">
-              <a>E-learning</a>
-            </Link>
-          </li>
-
-          <li className="opacity-80">
-            <Link href="/">
-              <a>Crypto</a>
             </Link>
           </li>
         </ul>
@@ -96,26 +93,26 @@ const Footer = () => (
           <li className="font-bold mb-3">Quick Links</li>
 
           <li className="opacity-80">
-            <Link href="/auth/signup">
-              <a>Registration</a>
+            <Link href="#">
+              <a>Terms &amp; Conditions</a>
             </Link>
           </li>
 
           <li className="opacity-80">
-            <Link href="/">
-              <a>Make saving Reviews</a>
-            </Link>
-          </li>
-
-          <li className="opacity-80">
-            <Link href="/">
-              <a>Blogs</a>
-            </Link>
-          </li>
-
-          <li className="opacity-80">
-            <Link href="/">
+            <Link href="/contact">
               <a>Contact us</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/">
+              <a>About us</a>
             </Link>
           </li>
         </ul>
@@ -123,14 +120,14 @@ const Footer = () => (
 
       <div className="p-5 lg:w-1/4">
         <ul className="text-[#000B33]">
-          <li className="font-bold mb-3">Our Support Download</li>
-
-          <li className="opacity-80">456789123</li>
-
-          <li className="opacity-80">Mumbai, India</li>
+          <li className="font-bold mb-3">Reach us at</li>
 
           <li className="opacity-80">
-            <a href="mailto:Info@kingschart.com ">Info@kingschart.com </a>
+            <a href="https://t.me/Kingchart">@kingscharts</a>
+          </li>
+
+          <li className="opacity-80">
+            <a href="mailto:Info@kingschart.com ">contact@kingschart.com </a>
           </li>
         </ul>
 
