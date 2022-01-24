@@ -3,47 +3,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
 import { Router, useRouter } from "next/router";
-import { useState } from "react/cjs/react.development";
+// import { useState } from "react/cjs/react.development";
 import FormInputBlock from "../../components/FormInputBlock";
 import settings from "../../settings";
 
 export default function Login() {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const [payload, setPayload] = useState({
-    email: "",
-    password: "",
-  });
+  // const [payload, setPayload] = useState({
+  //   email: "",
+  //   password: "",
+  // });
 
   async function login(event) {
-    event.preventDefault();
-
-    const logininfo = {
-      identifier: payload.email,
-      password: payload.password,
-    };
-
-    const login = await fetch(`${settings.APIURL}/auth/local`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify(logininfo),
-    });
-
-    const loginResponse = await login.json();
-
-    if (loginResponse.jwt || loginResponse.jwt != "") {
-      localStorage.setItem("token", loginResponse.jwt);
-      localStorage.setItem("username", loginResponse.user.username);
-      localStorage.setItem("email", loginResponse.user.email);
-      localStorage.setItem("uid", loginResponse.user.id);
-      router.push("/services");
-    } else {
-      alert("Try Again Later");
-    }
+    // event.preventDefault();
+    // const logininfo = {
+    //   identifier: payload.email,
+    //   password: payload.password,
+    // };
+    // const login = await fetch(`${settings.APIURL}/auth/local`, {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(logininfo),
+    // });
+    // const loginResponse = await login.json();
+    // if (loginResponse.jwt || loginResponse.jwt != "") {
+    //   localStorage.setItem("token", loginResponse.jwt);
+    //   localStorage.setItem("username", loginResponse.user.username);
+    //   localStorage.setItem("email", loginResponse.user.email);
+    //   localStorage.setItem("uid", loginResponse.user.id);
+    //   router.push("/services");
+    // } else {
+    //   alert("Try Again Later");
+    // }
   }
 
   return (
@@ -92,13 +87,13 @@ export default function Login() {
           <form onSubmit={login}>
             <FormInputBlock label="Email Address" required>
               <input
-                value={payload.email}
-                onChange={(e) =>
-                  setPayload({
-                    email: e.target.value,
-                    password: payload.password,
-                  })
-                }
+                // value={payload.email}
+                // onChange={(e) =>
+                //   setPayload({
+                //     email: e.target.value,
+                //     password: payload.password,
+                //   })
+                // }
                 className="border rounded-lg w-full p-2"
                 type="email"
               />
@@ -107,13 +102,13 @@ export default function Login() {
             <div>
               <FormInputBlock label="Password" required>
                 <input
-                  value={payload.password}
-                  onChange={(e) =>
-                    setPayload({
-                      email: payload.email,
-                      password: e.target.value,
-                    })
-                  }
+                  // value={payload.password}
+                  // onChange={(e) =>
+                  //   setPayload({
+                  //     email: payload.email,
+                  //     password: e.target.value,
+                  //   })
+                  // }
                   className="border rounded-lg w-full p-2"
                   type="password"
                 />
