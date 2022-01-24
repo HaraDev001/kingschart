@@ -8,6 +8,7 @@ import {
   faTelegram,
   faTelegramPlane,
   faTwitter,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => (
@@ -23,11 +24,18 @@ const Footer = () => (
           text.
         </p> */}
 
-        <ul className="mt-5">
+        <ul className="mt-5 flex jsu">
+          <li className="mr-3 inline-block">
+            <a target="_blank" href="https://www.instagram.com/kingscharts/">
+              <a className="hover:text-[#FD4C5C]">
+                <FontAwesomeIcon height={20} icon={faYoutube} />
+              </a>
+            </a>
+          </li>
           <li className="w-4 mr-3 inline-block">
             <a target="_blank" href="https://www.instagram.com/kingscharts/">
               <a className="hover:text-[#FD4C5C]">
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon height={20} icon={faInstagram} />
               </a>
             </a>
           </li>
@@ -37,7 +45,7 @@ const Footer = () => (
               target="_blank"
               className="hover:text-[#FD4C5C]"
             >
-              <FontAwesomeIcon icon={faTelegramPlane} />
+              <FontAwesomeIcon height={20} icon={faTelegramPlane} />
             </a>
           </li>
 
@@ -47,7 +55,7 @@ const Footer = () => (
               href="https://www.facebook.com/profile.php?id=100076961797256"
             >
               <a className="hover:text-[#FD4C5C]">
-                <FontAwesomeIcon icon={faFacebookSquare} />
+                <FontAwesomeIcon height={20} icon={faFacebookSquare} />
               </a>
             </a>
           </li>
@@ -58,7 +66,7 @@ const Footer = () => (
               target="_blank"
               className="hover:text-[#FD4C5C]"
             >
-              <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon height={20} icon={faTwitter} />
             </a>
           </li>
         </ul>
