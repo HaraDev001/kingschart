@@ -19,10 +19,6 @@ import Header from "../../components/Header";
 export default function User() {
   const router = useRouter();
 
-  const [user, setUser] = useState({
-    name: "",
-  });
-
   const logout = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("email");
@@ -37,9 +33,6 @@ export default function User() {
       // setLogged(false);
     } else {
       // setLogged(true);
-      setUser({
-        name: localStorage.getItem("username"),
-      });
     }
   }
   // });
@@ -120,7 +113,7 @@ export default function User() {
               className="rounded-full inline-block"
               src="https://source.unsplash.com/50x50"
             />
-            <p className="ml-3">{user.name}</p>
+            <p className="ml-3">{"Test"}</p>
           </div>
         </div>
 
