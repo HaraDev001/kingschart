@@ -25,33 +25,25 @@ import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
 import moment from "moment";
-import { useEffect } from "react/cjs/react.development";
 
 export default function Home({ FAQ, blogs }) {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
-  const [clicked, setclicked] = useState(false);
-  const [sent, setSent] = useState(false);
+  // const [clicked, setclicked] = useState(false);
+  // const [sent, setSent] = useState(false);
   const [user, setUser] = useState({
     jwt: "",
   });
 
-  const isloaded = false;
-  useEffect(() => {
-    isloaded;
-  });
-
-  if (isloaded == true) {
-    if (localStorage) {
-      setUser({
-        jwt: localStorage.getItem("token"),
-      });
-    }
+  if (typeof window !== "undefined") {
+    // setUser({
+    //   jwt: localStorage.getItem("token"),
+    // });
   }
 
   function subscribe(e) {
     e.preventDefault();
-    setclicked(true);
+    // setclicked(true);
     if (email !== "") {
       axios
         .post(`${settings.APIURL}/newsletters`, {
@@ -60,11 +52,11 @@ export default function Home({ FAQ, blogs }) {
           },
         })
         .then(function (response) {
-          setSent(true);
+          // setSent(true);
           // setclicked(false);
         })
         .catch(function (error) {
-          setSent(false);
+          // setSent(false);
           console.log(error);
         });
     }
@@ -131,15 +123,15 @@ export default function Home({ FAQ, blogs }) {
               <form onSubmit={subscribe} className="rounded-lg">
                 <div className="bg-white p-3 mb-5 rounded-lg">
                   <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
                     className=" w-full p-3 rounded-lg block border-b"
                     type="email"
                     placeholder="Telegram ID*"
                   />
                   <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
                     className=" w-full p-3 rounded-lg block border-b"
                     type="email"
                     placeholder="Email Address*"
@@ -149,7 +141,7 @@ export default function Home({ FAQ, blogs }) {
                 <button
                   className={`bg-[#FD4C5C] text-white px-3 py-4 rounded-lg text-sm w-full`}
                   type="submit"
-                  disabled={sent}
+                  // disabled={sent}
                 >
                   I'm Ready to L(earn)
                 </button>

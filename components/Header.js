@@ -1,14 +1,14 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 
 const Header = (props) => {
   const [isActive, setActive] = useState(false);
   const [username, setUsername] = useState("");
 
-  useEffect(() => {
-    setUsername(localStorage.getItem("username"));
-  });
+  if (typeof window !== "undefined") {
+    // setUsername(localStorage.getItem("username"));
+  }
 
   return (
     <>
