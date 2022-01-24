@@ -14,14 +14,14 @@ const Footer = () => (
   <div>
     <div className="flex justify-between pt-20 flex-col lg:flex-row">
       <div className="lg:w-1/4 lg:pr-5">
-        <h6 className="text-lg italic">
+        <h6 className="text-lg italic mt-10">
           KING'S<span className="font-bold">CHART</span>
         </h6>
-        <p className="mt-5 opacity-60">
+        {/* <p className="mt-5 opacity-60">
           There are many variations of passages of Lorem the Ipsum available but
           it is the majority of suffered that a alteration in that some dummy
           text.
-        </p>
+        </p> */}
 
         <ul className="mt-5">
           <li className="w-4 mr-3 inline-block">
