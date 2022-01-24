@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -19,6 +19,18 @@ export default function Contact() {
   });
 
   const router = useRouter();
+
+  const [user, setUser] = useState({
+    jwt: "",
+  });
+
+  useEffect(() => {
+    if (localStorage) {
+      setUser({
+        jwt: localStorage.getItem("token"),
+      });
+    }
+  });
 
   function send(e) {
     e.preventDefault();
@@ -49,7 +61,7 @@ export default function Contact() {
 
       <div className="bg-white">
         <div className="container mx-auto px-5 lg:px-20">
-          <Header />
+          <Header jwt={user.jwt} />
         </div>
       </div>
       <div className="container mx-auto px-5 lg:px-20">

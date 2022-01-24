@@ -25,12 +25,24 @@ import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
 import moment from "moment";
+import { useEffect } from "react/cjs/react.development";
 
 export default function Home({ FAQ, blogs }) {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
   const [clicked, setclicked] = useState(false);
   const [sent, setSent] = useState(false);
+  const [user, setUser] = useState({
+    jwt: "",
+  });
+
+  useEffect(() => {
+    if (localStorage) {
+      setUser({
+        jwt: localStorage.getItem("token"),
+      });
+    }
+  });
 
   function subscribe(e) {
     e.preventDefault();
@@ -92,7 +104,7 @@ export default function Home({ FAQ, blogs }) {
         ""
       )}
       <div className="container mx-auto px-5 lg:px-20">
-        <Header />
+        <Header jwt={user.jwt} />
       </div>
       <div
         className="min-h-screen w-screen flex items-center justify-center relative"

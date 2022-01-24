@@ -2,9 +2,50 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { Router, useRouter } from "next/router";
+import { useState } from "react/cjs/react.development";
 import FormInputBlock from "../../components/FormInputBlock";
+import settings from "../../settings";
 
 export default function Login() {
+  const router = useRouter();
+
+  const [payload, setPayload] = useState({
+    email: "",
+    password: "",
+  });
+
+  async function login(event) {
+    event.preventDefault();
+
+    const logininfo = {
+      identifier: payload.email,
+      password: payload.password,
+    };
+
+    const login = await fetch(`${settings.APIURL}/auth/local`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(logininfo),
+    });
+
+    const loginResponse = await login.json();
+
+    if (loginResponse.jwt || loginResponse.jwt != "") {
+      localStorage.setItem("token", loginResponse.jwt);
+      localStorage.setItem("username", loginResponse.user.username);
+      localStorage.setItem("email", loginResponse.user.email);
+      localStorage.setItem("uid", loginResponse.user.id);
+      router.push("/services");
+    } else {
+      alert("Try Again Later");
+    }
+  }
+
   return (
     <div className="flex w-screen h-screen items-center">
       <Head>
@@ -21,15 +62,15 @@ export default function Login() {
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                  className="icon icon-tabler icon-tabler-arrow-narrow-left"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="#2c3e50"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -48,14 +89,31 @@ export default function Login() {
             </Link>
           </p>
 
-          <form action="">
+          <form onSubmit={login}>
             <FormInputBlock label="Email Address" required>
-              <input className="border rounded-lg w-full p-2" type="email" />
+              <input
+                value={payload.email}
+                onChange={(e) =>
+                  setPayload({
+                    email: e.target.value,
+                    password: payload.password,
+                  })
+                }
+                className="border rounded-lg w-full p-2"
+                type="email"
+              />
             </FormInputBlock>
 
             <div>
               <FormInputBlock label="Password" required>
                 <input
+                  value={payload.password}
+                  onChange={(e) =>
+                    setPayload({
+                      email: payload.email,
+                      password: e.target.value,
+                    })
+                  }
                   className="border rounded-lg w-full p-2"
                   type="password"
                 />
@@ -88,13 +146,11 @@ export default function Login() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const logininfo = {
-    identifier: "test@test.test",
-    password: "Password1",
-  };
+// export async function getServerSideProps(context) {
 
-  return {
-    props: {},
-  };
-}
+//   return {
+//     props: {
+//       loginResponse
+//     },
+//   };
+// }

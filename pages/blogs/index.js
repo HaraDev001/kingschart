@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useState } from "react/cjs/react.development";
 import BlogCard from "../../components/BlogCard";
 import BlogsSideBar from "../../components/BlogsSideBar";
 import Footer from "../../components/Footer";
@@ -11,6 +13,18 @@ import Header from "../../components/Header";
 import settings from "../../settings";
 
 export default function Blogs({ blogs }) {
+  const [user, setUser] = useState({
+    jwt: "",
+  });
+
+  useEffect(() => {
+    if (localStorage) {
+      setUser({
+        jwt: localStorage.getItem("token"),
+      });
+    }
+  });
+
   return (
     <div className="bg-[#90a8fe0d]">
       <Head>
@@ -18,7 +32,7 @@ export default function Blogs({ blogs }) {
       </Head>
 
       <div className="container mx-auto px-5 lg:px-20">
-        <Header />
+        <Header jwt={user.jwt} />
       </div>
 
       <div className="py-20 container mx-auto px-5 lg:px-20">

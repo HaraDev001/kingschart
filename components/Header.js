@@ -1,9 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
-const Header = () => {
+const Header = (props) => {
   const [isActive, setActive] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    setUsername(localStorage.getItem("username"));
+  });
+
   return (
     <>
       <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center w-full lg:px-20 px-5">
@@ -100,9 +106,15 @@ const Header = () => {
         </div>
 
         <div className="hidden lg:block w-1/4 text-right">
-          <Link href="/auth/login">
-            <a className="px-5">Login</a>
-          </Link>
+          {props.jwt === null ? (
+            <Link href="/auth/login">
+              <a className="px-5">Login</a>
+            </Link>
+          ) : (
+            <Link href="/user">
+              <a className="px-5">{username}</a>
+            </Link>
+          )}
         </div>
       </nav>
     </>
