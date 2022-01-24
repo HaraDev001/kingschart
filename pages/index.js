@@ -151,7 +151,7 @@ export default function Home({ FAQ, blogs }) {
 
           <div className="flex-1 flex justify-end lg:my-10">
             <div>
-              <img className="" src="/heroimage.svg" />
+              <img className="" src="/hero-image.png" />
             </div>
           </div>
         </div>

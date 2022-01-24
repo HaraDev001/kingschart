@@ -54,7 +54,7 @@ const Header = (props) => {
         </li>
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
-          <Link href="/services">
+          <Link href="/">
             <a>Our Services</a>
           </Link>
         </li>

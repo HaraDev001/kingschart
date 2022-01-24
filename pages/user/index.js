@@ -14,7 +14,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react/cjs/react.development";
 import FormInputBlock from "../../components/FormInputBlock";
-import Header from "../../components/Header";
 
 export default function User() {
   const router = useRouter();
@@ -38,10 +37,13 @@ export default function User() {
   // });
 
   return (
-    <>
+    <div className="flex w-screen h-screen items-center">
       <Head>
-        <title>King'sCharts Profile</title>
+        <title>Register Today on KingsChart!</title>
       </Head>
+      <div className="h-full w-1/2 overflow-hidden hidden lg:block xl:block">
+        <img className="w-auto h-full" src="/login.png" alt="" />
+      </div>
 
       <div className="fixed top-0 left-0 w-screen bg-white">
         <div className="container mx-auto px-5">
@@ -122,6 +124,6 @@ export default function User() {
         </div>
         <div className="w-2/12 bg-blue-300 p-6"></div>
       </div>
-    </>
+    </div>
   );
 }

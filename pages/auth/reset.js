@@ -36,6 +36,7 @@ export default function Reset() {
               <span className="mx-4">Home</span>
             </small>
           </Link>
+          
           <h1 className="font-extrabold text-4xl">Reset Password</h1>
 
           <form action="">
