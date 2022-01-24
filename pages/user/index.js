@@ -33,18 +33,18 @@ export default function User() {
     router.push("/auth/login");
   };
 
-  useEffect(() => {
-    if (localStorage) {
-      if (localStorage.getItem("token") === null) {
-        setLogged(false);
-      } else {
-        setLogged(true);
-        setUser({
-          name: localStorage.getItem("username"),
-        });
-      }
+  // useEffect(() => {
+  if (localStorage) {
+    if (localStorage.getItem("token") === null) {
+      setLogged(false);
+    } else {
+      setLogged(true);
+      setUser({
+        name: localStorage.getItem("username"),
+      });
     }
-  });
+  }
+  // });
 
   if (logged) {
     return (

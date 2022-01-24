@@ -36,13 +36,18 @@ export default function Home({ FAQ, blogs }) {
     jwt: "",
   });
 
+  const isloaded = false;
   useEffect(() => {
+    isloaded;
+  });
+
+  if (isloaded == true) {
     if (localStorage) {
       setUser({
         jwt: localStorage.getItem("token"),
       });
     }
-  });
+  }
 
   function subscribe(e) {
     e.preventDefault();
