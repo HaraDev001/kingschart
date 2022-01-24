@@ -12,10 +12,6 @@ export default function Services() {
   const router = useRouter();
   const { price } = router.query;
 
-  const [user, setUser] = useState({
-    jwt: "",
-  });
-
   if (typeof window !== "undefined") {
     setUser({
       jwt: localStorage.getItem("token"),
