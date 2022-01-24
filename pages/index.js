@@ -176,9 +176,6 @@ export default function Home({ FAQ, blogs }) {
         </div>
       </div>
 
-      <div className="container mx-auto px-5 lg:px-20">
-        <h1 className="text-4xl font-bold mt-10">Our Services</h1>
-      </div>
       <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
         <div className="md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5 lg:gap-10 justify-items-center">
           <a
@@ -467,23 +464,42 @@ export default function Home({ FAQ, blogs }) {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {[1, 2, 3, 4, 5, 6].map((element) => (
-            <SwiperSlide className="p-5" key={element}>
+          {[
+            {
+              id: 0,
+              name: "Aadi Rana",
+              job: "Commerce Student",
+              message:
+                "When I was coming in crypto market before few months I almost lose my $20-$25,000 but from good efforts and personal efforts by King Khan and Ruchi Mam today I almost recover my all loss and make some good profit thank you so much baby Wales",
+            },
+            {
+              id: 1,
+              name: "Mix Bull",
+              job: "Commerce Student",
+              message:
+                "Thank you so much king sir because of your buying I mostly open my all coins in future with the small lvg that’s why I made some good profit thank you so much for the bottom buying",
+            },
+            {
+              id: 2,
+              name: "Aadi Rana",
+              job: "Commerce Student",
+              message:
+                "Thank you khan sir for showing us the right path. I wish if i could find you in last cycle. i would have made at least a million by now with the amount of capital i had in my early days. Lets bank in this cycle and retire",
+            },
+          ].map((element) => (
+            <SwiperSlide className="p-5" key={element.id}>
               <div className="flex">
                 <img
                   className="h-10 w-10 rounded-full"
                   src="https://source.unsplash.com/kVg2DQTAK7c/50x50"
                 />
                 <div className="mx-4">
-                  <h5>Shilpa Shetty</h5>
-                  <small className="opacity-80">Commerce Student</small>
+                  <h5>{element.name}</h5>
+                  <small className="opacity-80">{element.job}</small>
                 </div>
               </div>
 
-              <p className="mt-5">
-                OMG! I cannot believe that I have got a brand new landing page
-                after getting appmax. It was super easy to edit and publish.
-              </p>
+              <p className="mt-5">{element.message}</p>
             </SwiperSlide>
           ))}
         </Swiper>

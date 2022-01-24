@@ -61,7 +61,7 @@ const Header = (props) => {
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/blogs">
-            <a>Blogs</a>
+            <a>Blog</a>
           </Link>
         </li>
 
@@ -93,7 +93,7 @@ const Header = (props) => {
 
             <li className="inline-block mx-4 font-bold">
               <Link href="/blogs">
-                <a>Blogs</a>
+                <a>Blog</a>
               </Link>
             </li>
 
