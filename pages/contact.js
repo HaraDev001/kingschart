@@ -81,7 +81,11 @@ export default function Contact() {
                 </li>
 
                 <li className="mt-5">
-                  <a href="mailto:contact@kingscharts.io" className="flex">
+                  <a
+                    href="https://t.me/Kingchart"
+                    target="_blank"
+                    className="flex"
+                  >
                     <FontAwesomeIcon
                       className="text-[#FD4C5C]"
                       icon={faTelegramPlane}

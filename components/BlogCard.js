@@ -22,12 +22,12 @@ export default function BlogCard(props) {
       <div className="p-4 py-8">
         <div className="flex text-[#377CFD] py-4">
           <span className="flex items-center justify-center">
-            <FontAwesomeIcon icon={faUserAlt} />
+            <FontAwesomeIcon height={20} icon={faUserAlt} />
             <small className="mx-3">Admin</small>
           </span>
 
           <span className="flex items-center justify-center ml-5">
-            <FontAwesomeIcon icon={faCalendarDay} />
+            <FontAwesomeIcon height={20} icon={faCalendarDay} />
             <small className="mx-3">17 July, 2021</small>
           </span>
         </div>
@@ -42,8 +42,13 @@ export default function BlogCard(props) {
 
         <div>
           <Link href="/blogs/blog">
-            <a className="text-[#FD4C5C]">
-              Read More <FontAwesomeIcon icon={faLongArrowAltRight} />
+            <a className="text-[#FD4C5C] flex items-center">
+              Read More{" "}
+              <FontAwesomeIcon
+                className="ml-3"
+                height={20}
+                icon={faLongArrowAltRight}
+              />
             </a>
           </Link>
         </div>

@@ -87,3 +87,14 @@ export default function Login() {
     </div>
   );
 }
+
+export async function getServerSideProps(context) {
+  const logininfo = {
+    identifier: "test@test.test",
+    password: "Password1",
+  };
+
+  return {
+    props: {},
+  };
+}

@@ -1,3 +1,6 @@
+import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import Head from "next/head";
 import Link from "next/link";
 import BlogCard from "../../components/BlogCard";
@@ -5,8 +8,9 @@ import BlogsSideBar from "../../components/BlogsSideBar";
 import Footer from "../../components/Footer";
 import FooterAlt from "../../components/FooterALT";
 import Header from "../../components/Header";
+import settings from "../../settings";
 
-export default function Blogs() {
+export default function Blogs({ blogs }) {
   return (
     <div className="bg-[#90a8fe0d]">
       <Head>
@@ -26,11 +30,63 @@ export default function Blogs() {
 
           <div className="w-9/12 pl-2">
             <div className="grid grid-cols-2 gap-10">
-              {[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }].map(
-                (element, index) => (
-                  <BlogCard key={index} />
-                )
-              )}
+              {blogs.data.map((element) => (
+                <div key={element.id}>
+                  <div className="shadow-lg">
+                    <img
+                      src={`${settings.ROOT}${element.attributes.Featured_Image.data[0].attributes.url}`}
+                    />
+
+                    <div className="p-5">
+                      <span className="flex items-center text-[#377CFD]">
+                        <FontAwesomeIcon
+                          style={{ width: "15px" }}
+                          icon={faCalendar}
+                        />
+
+                        <small className="mx-2">
+                          {moment(`${element.attributes.createdAt}`).calendar()}
+                        </small>
+                      </span>
+                      <h4 className="my-5 font-bold">
+                        {element.attributes.Title}
+                      </h4>
+                      <p className="text-sm opacity-80">
+                        {element.attributes.Summary}
+                      </p>
+
+                      <div className="mt-5">
+                        {element.attributes.External_Link !== "" ? (
+                          <a
+                            target="_blank"
+                            href={element.attributes.External_Link}
+                          >
+                            <span className="flex text-[#FD4C5C] cursor-pointer">
+                              <a>Read more</a>
+                              <FontAwesomeIcon
+                                className="mx-5"
+                                width="10"
+                                icon={faArrowRight}
+                              />
+                            </span>
+                          </a>
+                        ) : (
+                          <Link href="/">
+                            <span className="flex text-[#FD4C5C] cursor-pointer">
+                              <a>Read more</a>
+                              <FontAwesomeIcon
+                                className="mx-5"
+                                width="10"
+                                icon={faArrowRight}
+                              />
+                            </span>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <ul className="mt-5">
@@ -64,4 +120,15 @@ export default function Blogs() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const blogsResponse = await fetch(`${settings.APIURL}/blogs?populate=*`);
+  const blogsData = await blogsResponse.json();
+
+  return {
+    props: {
+      blogs: blogsData,
+    },
+  };
 }
