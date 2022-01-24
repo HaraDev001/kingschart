@@ -5,17 +5,15 @@ import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-import { useState } from "react/cjs/react.development";
-import { useEffect } from "react";
 
 export default function Services() {
   const router = useRouter();
   const { price } = router.query;
 
+  // const
   if (typeof window !== "undefined") {
-    setUser({
-      jwt: localStorage.getItem("token"),
-    });
+    // setUser({
+    // jwt: localStorage.getItem("token"),
   }
 
   return (
@@ -25,7 +23,7 @@ export default function Services() {
       </Head>
 
       <div className="container mx-auto px-5 lg:px-20 bg-white">
-        <Header jwt={user.jwt} />
+        <Header />
       </div>
 
       <div className="contanier mx-auto px-5 lg:px-20 bg-[rgba(144,168,254,0.05)] pt-20 relative">
