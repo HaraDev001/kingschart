@@ -51,10 +51,10 @@ export default function BlogsSideBar(props) {
       </div>
 
       <div className="mt-5">
-        <h4 className="py-3 text-lg mt-10">Recent Posts</h4>
+        <h4 className="py-3 text-lg mt-5">Recent Posts</h4>
         <hr />
         <ul className="my-5">
-          <li>
+        <li>
             <Link href="/">
               <div className="flex items-center">
                 <div>

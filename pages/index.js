@@ -24,26 +24,16 @@ import {
 import Accordion from "../components/Accordion";
 import axios from "axios";
 import settings from "../settings";
-import moment from "moment";
 
-export default function Home({ FAQ, blogs }) {
+export default function Home() {
   const [isPopupVisible, setPopupVisible] = useState(true);
   const [email, setEmail] = useState("");
-  // const [clicked, setclicked] = useState(false);
-  // const [sent, setSent] = useState(false);
-  const [user, setUser] = useState({
-    jwt: "",
-  });
-
-  if (typeof window !== "undefined") {
-    // setUser({
-    //   jwt: localStorage.getItem("token"),
-    // });
-  }
+  const [clicked, setclicked] = useState(false);
+  const [sent, setSent] = useState(false);
 
   function subscribe(e) {
     e.preventDefault();
-    // setclicked(true);
+    setclicked(true);
     if (email !== "") {
       axios
         .post(`${settings.APIURL}/newsletters`, {
@@ -52,12 +42,11 @@ export default function Home({ FAQ, blogs }) {
           },
         })
         .then(function (response) {
-          // setSent(true);
+          setSent(true);
           // setclicked(false);
         })
         .catch(function (error) {
-          // setSent(false);
-          console.log(error);
+          setSent(false);
         });
     }
   }
@@ -101,7 +90,7 @@ export default function Home({ FAQ, blogs }) {
         ""
       )}
       <div className="container mx-auto px-5 lg:px-20">
-        <Header jwt={user.jwt} />
+        <Header />
       </div>
       <div
         className="min-h-screen w-screen flex items-center justify-center relative"
@@ -113,37 +102,40 @@ export default function Home({ FAQ, blogs }) {
           <div className="lg:pl-20 lg:w-1/3 px-10 lg:px-0">
             <div>
               <h1 className="text-4xl lg:text-6xl text-[#000B33] font-black whitespace-normal mt-44 lg:mt-auto capitalize">
-                Start your L(earn)ing journey today
+                Start your l(earn)ing journey today
               </h1>
               <p className="my-5">
-                Yes, you need only 60 mins to get started with trading and it
+                Yes, you needonly 60 mins to get started with trading and it
                 doesn't matter what level you are at.
               </p>
 
-              <form onSubmit={subscribe} className="rounded-lg">
-                <div className="bg-white p-3 mb-5 rounded-lg">
-                  <input
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
-                    className=" w-full p-3 rounded-lg block border-b"
-                    type="email"
-                    placeholder="Telegram ID*"
-                  />
-                  <input
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
-                    className=" w-full p-3 rounded-lg block border-b"
-                    type="email"
-                    placeholder="Email Address*"
-                  />
-                </div>
-
+              <form
+                onSubmit={subscribe}
+                className={`flex bg-white shadow-lg lg:items-center lg:justify-between rounded-lg lg:px-4 ${
+                  clicked === true &&
+                  (email.length == 0 ? "border border-red-500" : "")
+                }`}
+              >
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 p-3 rounded-lg"
+                  type="email"
+                  placeholder="Enter your email address"
+                />
                 <button
-                  className={`bg-[#FD4C5C] text-white px-3 py-4 rounded-lg text-sm w-full`}
+                  className="bg-[#FD4C5C] text-white px-3 py-2 rounded-lg text-sm hover:bg-black"
                   type="submit"
-                  // disabled={sent}
                 >
-                  I'm Ready to L(earn)
+                  {clicked == true ? (
+                    sent == true ? (
+                      <FontAwesomeIcon icon={faCheck} width="15" />
+                    ) : (
+                      "Try Again"
+                    )
+                  ) : (
+                    "I'm Ready to Learn"
+                  )}
                 </button>
               </form>
             </div>
@@ -173,96 +165,28 @@ export default function Home({ FAQ, blogs }) {
         </div>
       </div>
 
-      <div className="container flex items-center justify-center lg:justify-between px-5 lg:px-20 flex-col lg:flex-row mb-5">
-        <div className="md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5 lg:gap-10 justify-items-center">
-          <a
-            href="https://www.youtube.com/c/KingChart007"
-            target="_blank"
-            className="bg-white shadow-lg cursor-pointer px-5 text-center py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/robot-icon.svg" />
-            <h4 className="font-bold text-xl mt-5">
-              Free Crypto Awareness Touchpoints
-            </h4>
-            <p className="px-3 opacity-60 mt-3">
-              We strive to educate people on all things crypto as awareness is
-              the first step to success. Tune in to our You tube, Instagram,
-              twitter and Spotify channels and get access to free, easy to
-              consume content covering everything from fundamentals of crypto to
-              latest industry trends.
-            </p>
-          </a>
+      <div className="flex items-center justify-center lg:px-20 flex-col lg:flex-row my-5">
+        <div className="w-full lg:w-1/2 md:mt-20">
+          <img className="w-full h-full" src="/services.svg" />
+        </div>
 
-          <a
-            href="/services?price=premium"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/telegramicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Telegram Community</h4>
-            <p className="px-3 opacity-60 mt-3">
-              We bring together thousands of like-minded people as we endeavour
-              to build a well-informed community of next-generation investors
-              with the multiple telegram groups we host. Join one of the largest
-              crypto trading communities and become a part of the revolution.
-            </p>
-          </a>
+        <div className="px-5 my-10 lg:p-10 lg:w-1/2">
+          <h2 className="text-2xl font-black">
+            Why learn to trade with King’sChart?
+          </h2>
+          <p className="opacity-70">
+            We are experienced in determining the personality of your brand and
+            delivering a coher. We are experienced in determining the
+            personality of your brand and delivering a coher
+          </p>
 
-          <a
-            href="/services?price=master"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/micicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Online MasterClass</h4>
-            <p className="px-3 opacity-60 mt-3">
-              With our trading course covering technical crypto analysis and the
-              Elliott Wave Trading Theory, we offer our users a sure shot way to
-              crack the crypto market and multiply their wealth. Register now to
-              start your L(earn)ing journey today!
-            </p>
-          </a>
-
-          <a className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col">
-            <img className="inline-block" src="/discordicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Discord Community</h4>
-            <p className="px-3 opacity-60 mt-3">
-              Coming soon- An Integrated and detailed discord community to
-              promote peer-peer learning and data sharing
-            </p>
-          </a>
-
-          <a
-            href="https://open.spotify.com/show/1KiPAtxH1I3zCNXpV3J8ia?si=bc7e4c32056f4606"
-            target="_blank"
-            className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col"
-          >
-            <img className="inline-block" src="/phoneicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Free Podcast</h4>
-            <p className="px-3 opacity-60 mt-3">
-              Catch us on spotify with our upcoming inhouse podcast which will
-              serve as an amateur’s guide to discovering the vast world of
-              crypto. From getting acquainted with the fundamentals of
-              cryptoverse, to staying on top of industry updates, to hearing
-              from eminent members of the crypto community, this podcast exists
-              to get you all set for the future.
-            </p>
-          </a>
-
-          <a className="bg-white shadow-lg px-5 text-center  py-20 flex items-center justify-center flex-col w-full">
-            <img className="inline-block" src="/shirticon.svg" />
-            <h4 className="font-bold text-xl mt-5">Merchandise</h4>
-            <p className="px-3 opacity-60 mt-3">
-              Journal and starter kit coming soon
-            </p>
-          </a>
-          {/* 
-          <div className="bg-white shadow-lg px-5 text-center py-8  lg:mt-10 lg:-mb-10">
-            <img className="inline-block" src="/phoneicon.svg" />
-            <h4 className="font-bold text-xl mt-5">Online Courses</h4>
-            <p className="px-3 opacity-60 mt-3">
-              We are Spreading Awareness through our free Youtube educational
-              content and free telegram channel.
-            </p>
-          </div> */}
+          <div className="mt-10 ">
+            <Link href="">
+              <a className="px-6 py-4 bg-[#FD4C5C] text-white rounded-lg hover:bg-black">
+                Get Started
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -286,10 +210,7 @@ export default function Home({ FAQ, blogs }) {
 
         <div className="lg:w-1/2 p-5">
           <div>
-            <video className="w-full h-auto bg-red-400" controls>
-              <source src="/aboutus.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <img className="cursor-pointer" src="/aboutus-image.png" alt="" />
             <ul className="mt-5">
               <li className="w-4 mr-3 inline-block">
                 <a
@@ -328,6 +249,28 @@ export default function Home({ FAQ, blogs }) {
         </div>
       </div>
 
+      <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
+        <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
+          <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
+          <p>Followers</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#FFC83E]">10+</h3>
+          <p>Countries</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#00BB98]">500+</h3>
+          <p>Premium Members</p>
+        </div>
+
+        <div className="text-center w-1/2 lg:w-1/4 p-5">
+          <h3 className="text-5xl font-bold text-[#FD4C5C]">1000+</h3>
+          <p>Course Students</p>
+        </div>
+      </div>
+
       <div className="mt-40 px-5 lg:px-20">
         <h2 className="text-5xl font-bold">Crypto alerts and news</h2>
       </div>
@@ -354,13 +297,10 @@ export default function Home({ FAQ, blogs }) {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {blogs.data.map((element) => (
-            <SwiperSlide className="py-10" key={element.id}>
+          {[1, 2, 3, 4, 5, 6].map((element) => (
+            <SwiperSlide className="py-10" key={element}>
               <div className="shadow-lg">
-                <img
-                  src={`${settings.ROOT}${element.attributes.Featured_Image.data[0].attributes.url}`}
-                />
-
+                <img src="/blog-image.png" />
                 <div className="p-5">
                   <span className="flex items-center text-[#377CFD]">
                     <FontAwesomeIcon
@@ -368,70 +308,32 @@ export default function Home({ FAQ, blogs }) {
                       icon={faCalendar}
                     />
 
-                    <small className="mx-2">
-                      {moment(`${element.attributes.createdAt}`).calendar()}
-                    </small>
+                    <small className="mx-2">{10 + element} May, 2021</small>
                   </span>
-                  <h4 className="my-5 font-bold">{element.attributes.Title}</h4>
+                  <h4 className="my-5 font-bold">NFT Beginner to Pro</h4>
                   <p className="text-sm opacity-80">
-                    {element.attributes.Summary}
+                    It is almost impossible to read the news without coming
+                    across a lead story elections through fake social media
+                    accounts...
                   </p>
 
                   <div className="mt-5">
-                    {element.attributes.External_Link !== "" ? (
-                      <a
-                        target="_blank"
-                        href={element.attributes.External_Link}
-                      >
-                        <span className="flex text-[#FD4C5C] cursor-pointer">
-                          <a>Read more</a>
-                          <FontAwesomeIcon
-                            className="mx-5"
-                            width="10"
-                            icon={faArrowRight}
-                          />
-                        </span>
-                      </a>
-                    ) : (
-                      <Link href="/">
-                        <span className="flex text-[#FD4C5C] cursor-pointer">
-                          <a>Read more</a>
-                          <FontAwesomeIcon
-                            className="mx-5"
-                            width="10"
-                            icon={faArrowRight}
-                          />
-                        </span>
-                      </Link>
-                    )}
+                    <Link href="/">
+                      <span className="flex text-[#FD4C5C] cursor-pointer">
+                        <a>Read more</a>
+                        <FontAwesomeIcon
+                          className="mx-5"
+                          width="10"
+                          icon={faArrowRight}
+                        />
+                      </span>
+                    </Link>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-
-      <div className="flex items-center justify-between px-5 lg:px-20 flex-wrap">
-        <div className="text-center w-1/2 lg:w-1/4 p-5 flex-1 ">
-          <h3 className="text-5xl font-bold text-[#2B59FF]">40K+</h3>
-          <p>Followers</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FFC83E]">10+</h3>
-          <p>Countries</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#00BB98]">500+</h3>
-          <p>Premium Members</p>
-        </div>
-
-        <div className="text-center w-1/2 lg:w-1/4 p-5">
-          <h3 className="text-5xl font-bold text-[#FD4C5C]">1000+</h3>
-          <p>Course Students</p>
-        </div>
       </div>
 
       <div className="mt-40 lg:px-20">
@@ -461,42 +363,23 @@ export default function Home({ FAQ, blogs }) {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {[
-            {
-              id: 0,
-              name: "Aadi Rana",
-              job: "Commerce Student",
-              message:
-                "When I was coming in crypto market before few months I almost lose my $20-$25,000 but from good efforts and personal efforts by King Khan and Ruchi Mam today I almost recover my all loss and make some good profit thank you so much baby Wales",
-            },
-            {
-              id: 1,
-              name: "Mix Bull",
-              job: "Commerce Student",
-              message:
-                "Thank you so much king sir because of your buying I mostly open my all coins in future with the small lvg that’s why I made some good profit thank you so much for the bottom buying",
-            },
-            {
-              id: 2,
-              name: "Aadi Rana",
-              job: "Commerce Student",
-              message:
-                "Thank you khan sir for showing us the right path. I wish if i could find you in last cycle. i would have made at least a million by now with the amount of capital i had in my early days. Lets bank in this cycle and retire",
-            },
-          ].map((element) => (
-            <SwiperSlide className="p-5" key={element.id}>
+          {[1, 2, 3, 4, 5, 6].map((element) => (
+            <SwiperSlide className="p-5" key={element}>
               <div className="flex">
                 <img
                   className="h-10 w-10 rounded-full"
                   src="https://source.unsplash.com/kVg2DQTAK7c/50x50"
                 />
                 <div className="mx-4">
-                  <h5>{element.name}</h5>
-                  <small className="opacity-80">{element.job}</small>
+                  <h5>Shilpa Shetty</h5>
+                  <small className="opacity-80">Commerce Student</small>
                 </div>
               </div>
 
-              <p className="mt-5">{element.message}</p>
+              <p className="mt-5">
+                OMG! I cannot believe that I have got a brand new landing page
+                after getting appmax. It was super easy to edit and publish.
+              </p>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -534,7 +417,7 @@ export default function Home({ FAQ, blogs }) {
         </div>
       </div>
 
-      <div className="container mx-auto xl:px-20 px-5 pt-20 pb-40">
+      <div className="min-h-screen xl:px-20 flex justify-center">
         <div className="mt-48 w-full">
           <div className="text-center">
             <h2 className="text-5xl font-bold">Frequently Asked Questions</h2>
@@ -546,15 +429,54 @@ export default function Home({ FAQ, blogs }) {
             </p>
           </div>
 
-          <div className="flex w-full flex-wrap  items-stretch">
-            {FAQ.data.map((element) => (
+          <div className="flex w-full flex-wrap">
+            {[
+              {
+                id: 0,
+                title: "How is a egg fried?",
+                content: "Throw an egg in hot oil",
+              },
+              {
+                id: 1,
+                title: "How to make crisp?",
+                content: "Just do it",
+              },
+              {
+                id: 2,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 3,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 4,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 5,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 6,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+              {
+                id: 7,
+                title: "How to ride a bike?",
+                content: "Paddling keeps you alive.",
+              },
+            ].map((element) => (
               <div
-                className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 block gap-5 py-5"
+                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 block"
                 key={element.id}
               >
-                <Accordion title={element.attributes.Question}>
-                  {element.attributes.Answer}
-                </Accordion>
+                <Accordion title={element.title}>{element.content}</Accordion>
               </div>
             ))}
           </div>
@@ -582,24 +504,22 @@ export default function Home({ FAQ, blogs }) {
         <img src="/newsletter.png" />
       </div>
 
-      <div className="container mx-auto  px-5 lg:px-20 mt-10">
+      <div className="container mx-auto  px-5 lg:px-20">
         <Footer />
       </div>
     </div>
   );
 }
 
-export async function getServerSideProps(context) {
-  const faqResponse = await fetch(`${settings.APIURL}/faqs`);
-  const faqData = await faqResponse.json();
+// export async function getServerSideProps(context) {
+//   console.log("context => ", context);
+//   const faqResponse = await fetch(`${settings.APIURL}/faqs`);
+//   const faqData = await faqResponse.json();
 
-  const blogsResponse = await fetch(`${settings.APIURL}/blogs?populate=*`);
-  const blogsData = await blogsResponse.json();
-
-  return {
-    props: {
-      FAQ: faqData,
-      blogs: blogsData,
-    },
-  };
-}
+//   return {
+//     props: {
+//       FAQ: faqData,
+//       blogs: blogsData,
+//     },
+//   };
+// }

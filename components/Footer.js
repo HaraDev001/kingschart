@@ -24,7 +24,7 @@ const Footer = () => (
           text.
         </p> */}
 
-        <ul className="mt-5 flex jsu">
+<ul className="mt-5 flex jsu">
           <li className="mr-3 inline-block">
             <a target="_blank" href="https://www.instagram.com/kingscharts/">
               <a className="hover:text-[#FD4C5C]">
@@ -91,6 +91,24 @@ const Footer = () => (
           <li className="opacity-80">
             <Link href="/services">
               <a>Kings Academy</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/">
+              <a>Webinars</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/">
+              <a>E-learning</a>
+            </Link>
+          </li>
+
+          <li className="opacity-80">
+            <Link href="/">
+              <a>Crypto</a>
             </Link>
           </li>
         </ul>

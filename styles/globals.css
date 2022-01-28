@@ -25,10 +25,6 @@ body {
   color: #000b33;
 }
 
-* {
-  transition: all 0.3s;
-}
-
 *:hover,
 *:active,
 *:focus {

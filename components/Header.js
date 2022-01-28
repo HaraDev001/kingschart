@@ -12,7 +12,7 @@ const Header = (props) => {
 
   return (
     <>
-      <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center w-full lg:px-20 px-5">
+      <nav className="bg-white flex lg:hidden container mx-auto py-5 justify-between items-center absolute top-0 left-0 w-full lg:px-20 px-5">
         <div className="w-1/4">
           <Link href="/">
             <a className="cursor-pointer">
@@ -52,10 +52,21 @@ const Header = (props) => {
         >
           &times;
         </li>
+        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
+          <Link href="/courses">
+            <a>Cources</a>
+          </Link>
+        </li>
 
         <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
           <Link href="/">
             <a>Our Services</a>
+          </Link>
+        </li>
+
+        <li className="block mx-4 font-bold p-5 text-xl hover:text-[#FD4C5C]">
+          <Link href="/pricing">
+            <a>Pricing</a>
           </Link>
         </li>
 
@@ -86,8 +97,20 @@ const Header = (props) => {
         <div className="hidden lg:block w-2/4 text-center">
           <ul>
             <li className="inline-block mx-4 font-bold">
+              <Link href="/courses">
+                <a>Cources</a>
+              </Link>
+            </li>
+
+            <li className="inline-block mx-4 font-bold">
               <Link href="/services">
                 <a>Our Services</a>
+              </Link>
+            </li>
+
+            <li className="inline-block mx-4 font-bold">
+              <Link href="/pricing">
+                <a>Pricing</a>
               </Link>
             </li>
 

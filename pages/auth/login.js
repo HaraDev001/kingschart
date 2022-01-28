@@ -2,45 +2,64 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
-import { Router, useRouter } from "next/router";
-// import { useState } from "react/cjs/react.development";
 import FormInputBlock from "../../components/FormInputBlock";
+import axios from "axios";
 import settings from "../../settings";
-
+import { useState } from "react";
+import { useRouter } from "next/router";
+import session from "express-session";
 export default function Login() {
-  // const router = useRouter();
+  
+  var router = useRouter();
 
-  // const [payload, setPayload] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-
-  async function login(event) {
-    // event.preventDefault();
-    // const logininfo = {
-    //   identifier: payload.email,
-    //   password: payload.password,
-    // };
-    // const login = await fetch(`${settings.APIURL}/auth/local`, {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(logininfo),
-    // });
-    // const loginResponse = await login.json();
-    // if (loginResponse.jwt || loginResponse.jwt != "") {
-    //   localStorage.setItem("token", loginResponse.jwt);
-    //   localStorage.setItem("username", loginResponse.user.username);
-    //   localStorage.setItem("email", loginResponse.user.email);
-    //   localStorage.setItem("uid", loginResponse.user.id);
-    //   router.push("/services");
-    // } else {
-    //   alert("Try Again Later");
-    // }
+  function login(e) {
+    e.preventDefault();
+    axios
+      .get(`${settings.APIURL}/Users?filters[$and][0][email][$eq]=`+e.target.email.value)
+      .then(function (response) {
+        var date = response.data[0].date;
+        var id = response.data[0].id;
+        if(date + 12 * 60 * 60 * 1000 < Date.now()){
+          axios.put(`${settings.APIURL}/Users/` + id, {"date": Date.now()});
+          localStorage.setItem("email", e.target.email.value);
+          localStorage.setItem("id", id);
+          e.target.email.value="";
+          e.target.pass.value="";
+          alert("Login was successful.");
+          router.push("/services");
+        }
+        else{
+          alert("Login is already done.");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("In the connecting with the backend occurred error.");
+      });
   }
 
+  function logout() {
+    var email =localStorage.getItem("email");
+    var id = localStorage.getItem("id");
+    console.log("email = >", email, "id => ", id);
+    if(email !== "" && id != null)
+    {
+      axios.put(`${settings.APIURL}/Users/` + id, {"date":0})
+      .then(function (response) {
+        localStorage.setItem("email", "");
+        localStorage.setItem("id", null);
+        alert("Logout was successful.");
+        router.push("/")
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("In the connecting with the backend occurred error.");
+      });
+    }
+    else
+      alert("There is not the registered email.")
+  }
+  
   return (
     <div className="flex w-screen h-screen items-center">
       <Head>
@@ -86,31 +105,23 @@ export default function Login() {
 
           <form onSubmit={login}>
             <FormInputBlock label="Email Address" required>
-              <input
-                // value={payload.email}
-                // onChange={(e) =>
-                //   setPayload({
-                //     email: e.target.value,
-                //     password: payload.password,
-                //   })
-                // }
-                className="border rounded-lg w-full p-2"
+              <input 
+                required
+                name="email"
+                className="border rounded-lg w-full p-2" 
                 type="email"
+                placeholder="Enter Email*"
               />
             </FormInputBlock>
 
             <div>
               <FormInputBlock label="Password" required>
                 <input
-                  // value={payload.password}
-                  // onChange={(e) =>
-                  //   setPayload({
-                  //     email: payload.email,
-                  //     password: e.target.value,
-                  //   })
-                  // }
+                  required
+                  name="pass"
                   className="border rounded-lg w-full p-2"
                   type="password"
+                  placeholder="Enter Password*"
                 />
               </FormInputBlock>
             </div>
@@ -135,6 +146,14 @@ export default function Login() {
               Login Now
             </button>
           </form>
+            <br></br>
+            <button
+              onClick={logout}
+              className="block w-full p-2 mt-2 hover:bg-black bg-[#FD4C5C] text-white"
+              type="button"
+            >
+              Logout Now
+            </button>
         </div>
       </div>
     </div>
